@@ -1,7 +1,7 @@
 package com.orgabor.sportsgearstore;
 
 public class Product {
-	private int id;
+	private final int id;
 	private String name;
 	private String description;
 	private String category;
@@ -20,10 +20,6 @@ public class Product {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {
