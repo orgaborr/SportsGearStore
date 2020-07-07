@@ -5,7 +5,12 @@ import java.util.List;
 
 public class StockDaoImpl implements StockDao {
 	
-	private List<Product> products = new ArrayList<>();
+	private static List<Product> products = new ArrayList<>();
+	static {
+		products.add(new Product(1, "Bicycle", "A cool bike", "Cycling", 329.99, 5));
+		products.add(new Product(2, "Tent", "Tent for 3", "Camping", 99.99, 4));
+		products.add(new Product(3, "Rope", "50m dynamic rope", "Climbing", 299.99, 2));
+	}
 
 	public void addProduct(Product product) {
 		products.add(product);
