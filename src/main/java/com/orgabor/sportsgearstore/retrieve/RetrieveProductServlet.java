@@ -20,7 +20,7 @@ public class RetrieveProductServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/retrieve-products.jsp").forward(req, res);
+		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 	
 	@Override
@@ -29,15 +29,22 @@ public class RetrieveProductServlet extends HttpServlet {
 		
 		try {
 			String productId = req.getParameter("productId");
-			Product product = stocks.getProduct(Integer.parseInt(productId));
-			if(product == null) throw new Exception();
-			
-			req.setAttribute("product", product);
-			req.getRequestDispatcher("/WEB-INF/views/retrieve-products.jsp").forward(req, res);
-			
+			Product product = null;
+			if(!productId.equals("")) {
+				product = stocks.getProduct(Integer.parseInt(productId));
+				if(product != null) {
+					req.setAttribute("product", product);
+				} else {
+					req.setAttribute("errorMessage", "No product found");
+				}
+			} else {
+				req.setAttribute("errorMessage", "Empty query");
+			}
+			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
+
 		} catch(Exception e) {
-			req.setAttribute("errorMessage", "Invalid product ID");
-			req.getRequestDispatcher("/WEB-INF/views/retrieve-products.jsp").forward(req, res);
+			req.setAttribute("errorMessage", "Invalid ID format");
+			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 		}
 	}
 }
