@@ -1,4 +1,4 @@
-package com.orgabor.sportsgearstore;
+package com.orgabor.sportsgearstore.products;
 
 public class Product {
 	private final int id;
@@ -9,7 +9,6 @@ public class Product {
 	private int inStock;
 	
 	public Product(int id, String name, String description, String category, double price, int inStock) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;

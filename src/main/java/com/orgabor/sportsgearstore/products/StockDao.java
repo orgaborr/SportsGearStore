@@ -1,4 +1,4 @@
-package com.orgabor.sportsgearstore;
+package com.orgabor.sportsgearstore.products;
 
 import java.util.List;
 
