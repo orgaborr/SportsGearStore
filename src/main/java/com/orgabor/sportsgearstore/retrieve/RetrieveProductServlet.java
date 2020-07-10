@@ -26,18 +26,18 @@ public class RetrieveProductServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		String productId = req.getParameter("productId");
-		Product product = stocks.getProduct(Integer.parseInt(productId));
 		
-		if(product != null) {
+		try {
+			String productId = req.getParameter("productId");
+			Product product = stocks.getProduct(Integer.parseInt(productId));
+			if(product == null) throw new Exception();
+			
 			req.setAttribute("product", product);
 			req.getRequestDispatcher("/WEB-INF/views/retrieve-products.jsp").forward(req, res);
-		} else {
+			
+		} catch(Exception e) {
 			req.setAttribute("errorMessage", "Invalid product ID");
 			req.getRequestDispatcher("/WEB-INF/views/retrieve-products.jsp").forward(req, res);
 		}
 	}
-	
-	
-			
 }

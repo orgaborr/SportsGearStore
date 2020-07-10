@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="POST" action="/retrieve-products.do">
-		<input name="productId" type="text"><input name="Search" type="submit">
+	<form method="POST" action="/retrieve-product.do">
+		<input name="productId" type="text"><input type="submit">
 	</form>
 	
 	<p>
