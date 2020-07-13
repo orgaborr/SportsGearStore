@@ -1,6 +1,7 @@
 package com.orgabor.sportsgearstore.retrieve;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import com.orgabor.sportsgearstore.products.Product;
 import com.orgabor.sportsgearstore.products.StockDao;
 import com.orgabor.sportsgearstore.products.StockDaoImpl;
 
-@WebServlet(urlPatterns = "/retrieve-product.do")
+@WebServlet(urlPatterns = "/retrieve-products.do")
 public class RetrieveProductServlet extends HttpServlet {
 	
 	private StockDao stocks = new StockDaoImpl();
@@ -27,24 +28,25 @@ public class RetrieveProductServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
-		try {
-			String productId = req.getParameter("productId");
-			Product product = null;
-			if(!productId.equals("")) {
-				product = stocks.getProduct(Integer.parseInt(productId));
-				if(product != null) {
-					req.setAttribute("product", product);
-				} else {
-					req.setAttribute("errorMessage", "No product found");
-				}
+		String productSearch = req.getParameter("searchField");
+		
+		if(productSearch.matches("\\d+")) {
+			Product product = stocks.getProduct(Integer.parseInt(productSearch));
+			if(product != null) {
+				req.setAttribute("product", product);
 			} else {
-				req.setAttribute("errorMessage", "Empty query");
+				req.setAttribute("errorMessage", "No product found");
 			}
-			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
-
-		} catch(Exception e) {
-			req.setAttribute("errorMessage", "Invalid ID format");
-			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
+			
+		} else {
+			List<Product> products = stocks.retrieveByExpression(productSearch);
+			if(!products.isEmpty()) {
+				req.setAttribute("products", products);
+			} else {
+				req.setAttribute("errorMessage", "No product found");
+			}
 		}
+		
+		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 }

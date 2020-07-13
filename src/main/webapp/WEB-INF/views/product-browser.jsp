@@ -7,8 +7,8 @@
 <title>Sports Gear Store</title>
 </head>
 <body>
-	<form method="POST" action="/retrieve-product.do">
-		<input name="productId" type="text"><input type="submit">
+	<form method="POST" action="/retrieve-products.do">
+		<input name="searchField" type="text" required><input type="submit" value="Search">
 	</form>
 	
 	<p>

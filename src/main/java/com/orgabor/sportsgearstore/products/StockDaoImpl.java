@@ -38,7 +38,7 @@ public class StockDaoImpl implements StockDao {
 	public List<Product> retrieveByExpression(String expression) {
 		List<Product> productsByExpression = new ArrayList<>();
 		for(Product product : products) {
-			if(product.getCategory().equals(expression)) {
+			if(product.getName().equalsIgnoreCase(expression)) {
 				productsByExpression.add(product);
 			}
 		}
