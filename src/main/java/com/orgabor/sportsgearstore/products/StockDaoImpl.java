@@ -10,6 +10,7 @@ public class StockDaoImpl implements StockDao {
 		products.add(new Product(1, "Bicycle", "A cool bike", "Cycling", 329.99, 5));
 		products.add(new Product(2, "Tent", "Tent for 3", "Camping", 99.99, 4));
 		products.add(new Product(3, "Rope", "50m dynamic rope", "Climbing", 299.99, 2));
+		products.add(new Product(4, "Tent Stakes", "A set of 10 tent stakes", "Camping", 5.99, 10));
 	}
 
 	public void addProduct(Product product) {
@@ -38,7 +39,7 @@ public class StockDaoImpl implements StockDao {
 	public List<Product> retrieveByExpression(String expression) {
 		List<Product> productsByExpression = new ArrayList<>();
 		for(Product product : products) {
-			if(product.getName().equalsIgnoreCase(expression)) {
+			if(product.getName().toLowerCase().contains(expression.toLowerCase())) {
 				productsByExpression.add(product);
 			}
 		}
