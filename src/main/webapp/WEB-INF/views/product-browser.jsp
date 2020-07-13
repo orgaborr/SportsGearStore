@@ -16,13 +16,15 @@
 	<p>
 		<font color="red">${errorMessage}</font>
 	</p>
-	
+
+	<c:if test="${product != null}">
 	<h3>${product.getName()}</h3>
 	<p>
 		${product.getDescription()}<br>
 		${product.getPrice()}<br>
 		${product.getInStock()}<br>
 	</p>
+	</c:if>
 	
 	<c:forEach items="${products}" var="product">
 		<h3>${product.getName()}</h3>
