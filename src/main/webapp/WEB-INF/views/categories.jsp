@@ -28,7 +28,7 @@
 	</nav>
 	
 	<c:forEach items="${categories}" var="category">
-		<h3>${category.name()}</h3>	
+		<a>${category.name()}</a>	
 	</c:forEach>
 	
 </body>

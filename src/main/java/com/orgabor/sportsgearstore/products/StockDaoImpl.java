@@ -26,10 +26,10 @@ public class StockDaoImpl implements StockDao {
 		return null;
 	}
 
-	public List<Product> retrieveByCategory(String category) {
+	public List<Product> retrieveByCategory(Categories category) {
 		List<Product> productsInCategory = new ArrayList<>();
 		for(Product product : products) {
-			if(product.getCategory().equals(category)) {
+			if(product.getCategory() == category) {
 				productsInCategory.add(product);
 			}
 		}
@@ -59,5 +59,4 @@ public class StockDaoImpl implements StockDao {
 			}
 		}
 	}
-	
 }

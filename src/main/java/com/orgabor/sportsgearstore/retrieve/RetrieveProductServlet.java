@@ -22,29 +22,21 @@ public class RetrieveProductServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		String productSearch = req.getParameter("searchField");
+		String search = req.getParameter("search");
 		boolean productFound = false;
 		
-		if(productSearch.matches("\\d+")) {
-			productFound = attributeSetter.setProduct(productSearch, req);
-		} else {
-			productFound = attributeSetter.setProductList(productSearch, req);
-		}
-		
-		if(!productFound) {
-			req.setAttribute("errorMessage", "No product found");
+		if(search != null) {
+			if(search.matches("\\d+")) {
+				productFound = attributeSetter.setProduct(search, req);
+			} else {
+				productFound = attributeSetter.setProductList(search, req);
+			}
+			
+			if(!productFound) {
+				req.setAttribute("errorMessage", "No product found");
+			}
 		}
 		
 		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
-	
-	
-	
 }

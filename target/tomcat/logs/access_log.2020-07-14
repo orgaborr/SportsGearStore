@@ -25,3 +25,16 @@
 0:0:0:0:0:0:0:1 - - [14/Jul/2020:15:43:01 +0200] "POST /retrieve-products.do HTTP/1.1" 200 605 http-bio-8080-exec-7 1
 0:0:0:0:0:0:0:1 - - [14/Jul/2020:15:43:02 +0200] "POST /retrieve-products.do HTTP/1.1" 200 681 http-bio-8080-exec-7 1
 0:0:0:0:0:0:0:1 - - [14/Jul/2020:15:43:04 +0200] "POST /retrieve-products.do HTTP/1.1" 200 765 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:30:52 +0200] "GET /retrieve-products.do HTTP/1.1" 200 589 http-bio-8080-exec-5 13
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:30:54 +0200] "GET /list-categories.do HTTP/1.1" 200 703 http-bio-8080-exec-5 97
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:37 +0200] "GET /list-categories.do HTTP/1.1" 200 693 http-bio-8080-exec-8 92
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:37 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-8 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:40 +0200] "GET /list-categories.do HTTP/1.1" 200 693 http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:40 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:52 +0200] "GET /retrieve-products.do HTTP/1.1" 200 588 http-bio-8080-exec-7 58
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:54:54 +0200] "GET /retrieve-products.do?searchField=1 HTTP/1.1" 200 588 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:55:05 +0200] "GET /retrieve-products.do?searchField=1 HTTP/1.1" 200 588 http-bio-8080-exec-7 51
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:55:07 +0200] "GET /retrieve-products.do?searchField=2 HTTP/1.1" 200 588 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:55:08 +0200] "GET /retrieve-products.do?searchField=vfsff HTTP/1.1" 200 588 http-bio-8080-exec-7 0
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:55:14 +0200] "GET /retrieve-products.do?searchField=1 HTTP/1.1" 200 588 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:16:55:38 +0200] "GET /retrieve-products.do HTTP/1.1" 500 1472 http-bio-8080-exec-7 3
