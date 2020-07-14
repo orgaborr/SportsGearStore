@@ -17,6 +17,7 @@ import com.orgabor.sportsgearstore.products.StockDaoImpl;
 public class RetrieveProductServlet extends HttpServlet {
 	
 	private StockDao stocks = new StockDaoImpl();
+	private AttributeSetter attributeSetter = new AttributeSetter(stocks);
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -29,24 +30,21 @@ public class RetrieveProductServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String productSearch = req.getParameter("searchField");
+		boolean productFound = false;
 		
 		if(productSearch.matches("\\d+")) {
-			Product product = stocks.getProduct(Integer.parseInt(productSearch));
-			if(product != null) {
-				req.setAttribute("product", product);
-			} else {
-				req.setAttribute("errorMessage", "No product found");
-			}
-			
+			productFound = attributeSetter.setProduct(productSearch, req);
 		} else {
-			List<Product> products = stocks.retrieveByExpression(productSearch);
-			if(!products.isEmpty()) {
-				req.setAttribute("products", products);
-			} else {
-				req.setAttribute("errorMessage", "No product found");
-			}
+			productFound = attributeSetter.setProductList(productSearch, req);
+		}
+		
+		if(!productFound) {
+			req.setAttribute("errorMessage", "No product found");
 		}
 		
 		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
+	
+	
+	
 }

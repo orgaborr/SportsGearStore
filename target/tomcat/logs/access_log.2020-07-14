@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:16 +0200] "GET /retrieve-products.do HTTP/1.1" 200 589 http-bio-8080-exec-2 458
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:24 +0200] "POST /retrieve-products.do HTTP/1.1" 200 666 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:27 +0200] "POST /retrieve-products.do HTTP/1.1" 200 765 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:35 +0200] "GET /add-product.do HTTP/1.1" 404 979 http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:38 +0200] "GET /list-categories.do HTTP/1.1" 404 987 http-bio-8080-exec-6 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:13:54:40 +0200] "GET /logout.do HTTP/1.1" 404 969 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:56:07 +0200] "GET /retrieve-products.do HTTP/1.1" 200 589 http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:56:10 +0200] "POST /retrieve-products.do HTTP/1.1" 500 3660 http-bio-8080-exec-10 13
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:30 +0200] "GET /retrieve-products.do HTTP/1.1" 200 589 http-bio-8080-exec-1 11
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:31 +0200] "POST /retrieve-products.do HTTP/1.1" 200 666 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:34 +0200] "POST /retrieve-products.do HTTP/1.1" 200 765 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:36 +0200] "POST /retrieve-products.do HTTP/1.1" 200 605 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:39 +0200] "POST /retrieve-products.do HTTP/1.1" 200 605 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:41 +0200] "POST /retrieve-products.do HTTP/1.1" 200 605 http-bio-8080-exec-1 1
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:14:57:43 +0200] "POST /retrieve-products.do HTTP/1.1" 200 666 http-bio-8080-exec-1 1
