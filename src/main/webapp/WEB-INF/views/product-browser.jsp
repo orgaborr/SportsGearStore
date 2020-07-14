@@ -8,14 +8,24 @@
 <meta charset="ISO-8859-1">
 <title>Sports Gear Store</title>
 </head>
+
 <body>
-	<form method="POST" action="/retrieve-products.do">
-		<input name="searchField" type="text" required><input type="submit" value="Search">
-	</form>
-	
-	<p>
-		<font color="red">${errorMessage}</font>
-	</p>
+	<nav>
+		<ul>
+			<li>
+				<form method="POST" action="/retrieve-products.do">
+					<input name="searchField" type="text" required><input type="submit" value="Search">
+				</form>
+				<label><font color="red">${errorMessage}</font></label>
+			</li>
+			<li><a href="/list-categories.do">Sports</a></li>
+			<li><a href="/add-product.do">Add Product</a></li>
+		</ul>
+		<ul>
+			<li><a href="/logout.do">Logout</a></li>
+		</ul>
+		
+	</nav>
 
 	<c:if test="${product != null}">
 	<h3>${product.getName()}</h3>
