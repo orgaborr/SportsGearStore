@@ -7,10 +7,10 @@ public class StockDaoImpl implements StockDao {
 	
 	private static List<Product> products = new ArrayList<>();
 	static {
-		products.add(new Product(1, "Bicycle", "A cool bike", "Cycling", 329.99, 5));
-		products.add(new Product(2, "Tent", "Tent for 3", "Camping", 99.99, 4));
-		products.add(new Product(3, "Rope", "50m dynamic rope", "Climbing", 299.99, 2));
-		products.add(new Product(4, "Tent Stakes", "A set of 10 tent stakes", "Camping", 5.99, 10));
+		products.add(new Product(1, "Bicycle", "A cool bike", Categories.CYCLING, 329.99, 5));
+		products.add(new Product(2, "Tent", "Tent for 3", Categories.CAMPING, 99.99, 4));
+		products.add(new Product(3, "Rope", "50m dynamic rope", Categories.CLIMBING, 299.99, 2));
+		products.add(new Product(4, "Tent Stakes", "A set of 10 tent stakes", Categories.CAMPING, 5.99, 10));
 	}
 
 	public void addProduct(Product product) {
