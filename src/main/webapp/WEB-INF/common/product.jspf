@@ -1,6 +1,8 @@
-<h4>${product.getName()} (#${product.getId()})</h4>
-<p>
-	Description: ${product.getDescription()}<br>
-	Price: ${product.getPrice()} &euro;<br>
-	In Stock: ${product.getInStock()}<br>
-</p>
+<div class="container">
+	<h4>${product.getName()} (#${product.getId()})</h4>
+	<p>
+		Description: ${product.getDescription()}<br>
+		Price: ${product.getPrice()} &euro;<br>
+		In Stock: ${product.getInStock()}<br>
+	</p>
+</div>

@@ -1,16 +1,17 @@
-<nav>
-	<ul>
-		<li>
-			<form method="GET" action="/retrieve-products.do">
-				<input name="search" type="text"><input type="submit"
-					value="Search">
-			</form> <label><font color="red">${errorMessage}</font></label>
-		</li>
-		<li><a href="/list-categories.do">Sports</a></li>
-		<li><a href="/add-product.do">Add Product</a></li>
-	</ul>
-	<ul>
-		<li><a href="/logout.do">Logout</a></li>
-	</ul>
+<nav role="navigation" class="navbar navbar-default">
+	<div class="navbar-collapse">
 
+		<form class="navbar-form navbar-left" method="GET" action="/retrieve-products.do">
+			<input name="search" type="text" class="form-control">
+			<button type="submit" class="btn btn-default">Search</button>
+		</form>
+		
+		<ul class="nav navbar-nav">
+			<li><a href="/list-categories.do">Sports</a></li>
+			<li><a href="/add-product.do">Add Product</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/logout.do">Logout</a></li>
+		</ul>
+	</div>
 </nav>
