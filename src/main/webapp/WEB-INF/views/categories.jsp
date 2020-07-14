@@ -28,7 +28,7 @@
 	</nav>
 	
 	<c:forEach items="${categories}" var="category">
-		<a>${category.name()}</a><br>	
+		<a href="/retrieve-by-category.do?category=${category.name()}">${category.name()}</a><br>	
 	</c:forEach>
 	
 </body>

@@ -20,8 +20,7 @@ public class RetrieveProductServlet extends HttpServlet {
 	private AttributeSetter attributeSetter = new AttributeSetter(stocks);
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String search = req.getParameter("search");
 		boolean productFound = false;
 		
