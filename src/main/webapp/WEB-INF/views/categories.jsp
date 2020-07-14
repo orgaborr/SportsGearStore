@@ -13,8 +13,8 @@
 	<nav>
 		<ul>
 			<li>
-				<form method="POST" action="/retrieve-products.do">
-					<input name="searchField" type="text" required><input type="submit" value="Search">
+				<form method="GET" action="/retrieve-products.do">
+					<input name="search" type="text" required><input type="submit" value="Search">
 				</form>
 				<label><font color="red">${errorMessage}</font></label>
 			</li>
@@ -28,7 +28,7 @@
 	</nav>
 	
 	<c:forEach items="${categories}" var="category">
-		<a>${category.name()}</a>	
+		<a>${category.name()}</a><br>	
 	</c:forEach>
 	
 </body>
