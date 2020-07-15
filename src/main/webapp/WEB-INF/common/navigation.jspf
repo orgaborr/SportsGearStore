@@ -7,19 +7,16 @@
 		</form>
 		
 		<ul class="nav navbar-nav">
-<!-- 			<li class="dropdown"> -->
-<!-- 			<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">Sports <span class="caret"></span></a> -->
-<!-- 				<ul class="dropdown-menu"> -->
-<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CYCLING">Cycling</a></li> -->
-<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CAMPING">Camping</a></li> -->
-<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CLIMBING">Climbing</a></li> -->
-<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=ROWING">Rowing</a></li> -->
-<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=HIKING">Hiking</a></li> -->
-<!-- 				</ul> -->
-<!-- 			</li> -->
-
-			<li><a href="/list-categories.do">Sports</a>
-
+			<li class="dropdown">
+			<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">Sports <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CYCLING">Cycling</a></li>
+					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CAMPING">Camping</a></li>
+					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CLIMBING">Climbing</a></li>
+					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=ROWING">Rowing</a></li>
+					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=HIKING">Hiking</a></li>
+				</ul>
+			</li>
 			<li><a href="/add-product.do">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
