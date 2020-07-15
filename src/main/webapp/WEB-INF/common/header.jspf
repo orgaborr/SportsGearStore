@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Sports Gear Store</title>
+
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>

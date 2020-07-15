@@ -24,7 +24,7 @@ public class RetrieveProductServlet extends HttpServlet {
 		String search = req.getParameter("search");
 		boolean productFound = false;
 		
-		if(search != null) {
+		if(search != null && !search.equals("")) {
 			if(search.matches("\\d+")) {
 				productFound = attributeSetter.setProduct(search, req);
 			} else {
@@ -35,8 +35,9 @@ public class RetrieveProductServlet extends HttpServlet {
 				req.setAttribute("errorMessage", "No product found");
 			}
 			
+			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
+		} else {
+			req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, res);
 		}
-		
-		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 }

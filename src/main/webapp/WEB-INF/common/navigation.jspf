@@ -1,5 +1,3 @@
-<%@ include file="../common/header.jspf"%>
-
 <nav role="navigation" class="navbar navbar-default">
 	<div class="navbar-collapse">
 
@@ -9,14 +7,19 @@
 		</form>
 		
 		<ul class="nav navbar-nav">
-			<li class="dropdown">
-			<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" href="/list-categories.do">Sports <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<c:forEach items="${categories}" var="category">
-						<li><a class="dropdown-item" href="/retrieve-by-category.do?category=${category.name()}">${category.name()}</a></li>
-					</c:forEach>
-				</ul>
-			</li>
+<!-- 			<li class="dropdown"> -->
+<!-- 			<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">Sports <span class="caret"></span></a> -->
+<!-- 				<ul class="dropdown-menu"> -->
+<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CYCLING">Cycling</a></li> -->
+<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CAMPING">Camping</a></li> -->
+<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=CLIMBING">Climbing</a></li> -->
+<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=ROWING">Rowing</a></li> -->
+<!-- 					<li><a class="dropdown-item" href="/retrieve-by-category.do?category=HIKING">Hiking</a></li> -->
+<!-- 				</ul> -->
+<!-- 			</li> -->
+
+			<li><a href="/list-categories.do">Sports</a>
+
 			<li><a href="/add-product.do">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

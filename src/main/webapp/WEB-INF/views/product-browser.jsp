@@ -1,4 +1,4 @@
-<%-- <%@ include file="../common/header.jspf"%> --%>
+<%@ include file="../common/header.jspf"%>
 <%@ include file="../common/navigation.jspf"%>
 
 <c:if test="${errorMessage != null}">

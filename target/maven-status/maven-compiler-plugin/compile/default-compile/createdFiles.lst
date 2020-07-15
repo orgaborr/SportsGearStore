@@ -1,0 +1,8 @@
+com\orgabor\sportsgearstore\products\StockDaoImpl.class
+com\orgabor\sportsgearstore\products\Product.class
+com\orgabor\sportsgearstore\products\StockDao.class
+com\orgabor\sportsgearstore\retrieve\AttributeSetter.class
+com\orgabor\sportsgearstore\index\IndexServlet.class
+com\orgabor\sportsgearstore\products\Categories.class
+com\orgabor\sportsgearstore\retrieve\RetrieveByCategoryServlet.class
+com\orgabor\sportsgearstore\retrieve\RetrieveProductServlet.class

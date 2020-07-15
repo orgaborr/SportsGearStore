@@ -9,16 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.orgabor.sportsgearstore.products.Categories;
-import com.orgabor.sportsgearstore.products.StockDao;
-import com.orgabor.sportsgearstore.products.StockDaoImpl;
 
 @WebServlet(urlPatterns = "/list-categories.do")
-public class CategoriesServlet extends HttpServlet {
+public class ListCategoriesServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		req.setAttribute("categories", Categories.values());
 		System.out.println("CategoriesServlet called");
-		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
+		req.getRequestDispatcher("/WEB-INF/views/categories.jsp").forward(req, res);
 	}
 }
