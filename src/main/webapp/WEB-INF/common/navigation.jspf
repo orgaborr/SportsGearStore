@@ -1,13 +1,22 @@
+<%@ include file="../common/header.jspf"%>
+
 <nav role="navigation" class="navbar navbar-default">
 	<div class="navbar-collapse">
 
 		<form class="navbar-form navbar-left" method="GET" action="/retrieve-products.do">
 			<input name="search" type="text" class="form-control">
-			<button type="submit" class="btn btn-default">Search</button>
+			<button type="submit" class="btn btn-success">Search</button>
 		</form>
 		
 		<ul class="nav navbar-nav">
-			<li><a href="/list-categories.do">Sports</a></li>
+			<li class="dropdown">
+			<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" href="/list-categories.do">Sports <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<c:forEach items="${categories}" var="category">
+						<li><a class="dropdown-item" href="/retrieve-by-category.do?category=${category.name()}">${category.name()}</a></li>
+					</c:forEach>
+				</ul>
+			</li>
 			<li><a href="/add-product.do">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

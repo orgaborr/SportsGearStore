@@ -18,6 +18,7 @@ public class CategoriesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		req.setAttribute("categories", Categories.values());
-		req.getRequestDispatcher("/WEB-INF/views/categories.jsp").forward(req, res);
+		System.out.println("CategoriesServlet called");
+		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 }

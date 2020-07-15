@@ -34,6 +34,7 @@ public class RetrieveProductServlet extends HttpServlet {
 			if(!productFound) {
 				req.setAttribute("errorMessage", "No product found");
 			}
+			
 		}
 		
 		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
