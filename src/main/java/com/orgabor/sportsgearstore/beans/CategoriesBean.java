@@ -1,13 +1,13 @@
 package com.orgabor.sportsgearstore.beans;
 
-import java.util.List;
-
 import com.orgabor.sportsgearstore.products.Categories;
 
 public class CategoriesBean {
-	private Categories[] categories = Categories.values();
+	private Categories[] categories = new Categories[Categories.values().length];
 
-	public CategoriesBean() {}
+	public CategoriesBean() {
+		categories = Categories.values();
+	}
 
 	public Categories[] getCategories() {
 		return categories;

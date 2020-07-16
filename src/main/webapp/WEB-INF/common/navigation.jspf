@@ -11,16 +11,11 @@
 			<li class="dropdown"><a class="btn dropdown-toggle"
 				type="submit" data-toggle="dropdown">Sports <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item"
-						href="/retrieve-by-category.do?category=CYCLING">Cycling</a></li>
-					<li><a class="dropdown-item"
-						href="/retrieve-by-category.do?category=CAMPING">Camping</a></li>
-					<li><a class="dropdown-item"
-						href="/retrieve-by-category.do?category=CLIMBING">Climbing</a></li>
-					<li><a class="dropdown-item"
-						href="/retrieve-by-category.do?category=ROWING">Rowing</a></li>
-					<li><a class="dropdown-item"
-						href="/retrieve-by-category.do?category=HIKING">Hiking</a></li>
+				
+					<jsp:useBean id="categories" class="com.orgabor.sportsgearstore.beans.CategoriesBean" scope="session"></jsp:useBean>
+					<c:forEach items="${categories.getCategories()}" var="category">
+						<li><a class="dropdown-item" href="/retrieve-by-category.do?category=${category}">${category}</a></li>
+					</c:forEach>
 
 				</ul></li>
 			<li><a href="/add-product.do">Add Product</a></li>
