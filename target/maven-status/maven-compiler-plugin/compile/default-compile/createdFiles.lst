@@ -1,5 +1,3 @@
-com\orgabor\sportsgearstore\retrieve\ListCategoriesServlet.class
-com\orgabor\sportsgearstore\beans\CategoriesBean.class
 com\orgabor\sportsgearstore\products\StockDaoImpl.class
 com\orgabor\sportsgearstore\products\Product.class
 com\orgabor\sportsgearstore\products\StockDao.class
