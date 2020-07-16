@@ -4,8 +4,8 @@
 	<h4>Current</h4>
 	<table class="table-striped" style="width: 20%">
 		<tr>
-			<td>Product ID</td>
-			<td>#${product.getId()}</td>
+			<td>Product ID #</td>
+			<td>${product.getId()}</td>
 		</tr>
 		<tr>
 			<td>Name</td>
@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td>Price</td>
-			<td>${product.getPrice()}&euro;</td>
+			<td>${product.getPrice()} &euro;</td>
 		</tr>
 		<tr>
 			<td>In Stock</td>
@@ -32,7 +32,7 @@
 
 <div class="container">
 	<h4>Update</h4>
-	<form>
+	<form method="POST" action="/edit-product.do">
 		<fieldset>
 			<label>Name</label>
 			<input type="text" name="newName"><br>
