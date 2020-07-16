@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.StockDao;
 import com.orgabor.sportsgearstore.products.StockDaoImpl;
 
@@ -33,7 +34,7 @@ public class RetrieveProductServlet extends HttpServlet {
 				req.setAttribute("errorMessage", "No product found");
 			}
 		}
-		
+
 		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 }
