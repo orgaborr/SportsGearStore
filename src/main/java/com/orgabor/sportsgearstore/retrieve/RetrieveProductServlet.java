@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.StockDao;
 import com.orgabor.sportsgearstore.products.StockDaoImpl;
+import com.orgabor.sportsgearstore.utils.AttributeSetter;
 
 @WebServlet(urlPatterns = "/retrieve-products.do")
 public class RetrieveProductServlet extends HttpServlet {

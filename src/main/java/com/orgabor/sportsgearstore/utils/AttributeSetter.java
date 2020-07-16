@@ -1,4 +1,4 @@
-package com.orgabor.sportsgearstore.retrieve;
+package com.orgabor.sportsgearstore.utils;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class AttributeSetter {
 		this.stocks = stocks;
 	}
 
-	boolean setProduct(String search, HttpServletRequest req) {
+	public boolean setProduct(String search, HttpServletRequest req) {
 		Product product = stocks.getProduct(Integer.parseInt(search));
 		if(product != null) {
 			req.setAttribute("product", product);
@@ -24,7 +24,7 @@ public class AttributeSetter {
 		return false;
 	}
 	
-	boolean setProductList(String search, HttpServletRequest req) {
+	public boolean setProductList(String search, HttpServletRequest req) {
 		List<Product> products = stocks.retrieveByExpression(search);
 		if(!products.isEmpty()) {
 			req.setAttribute("products", products);
@@ -33,7 +33,7 @@ public class AttributeSetter {
 		return false;
 	}
 	
-	boolean setProductList(Categories category, HttpServletRequest req) {
+	public boolean setProductList(Categories category, HttpServletRequest req) {
 		List<Product> products = stocks.retrieveByCategory(category);
 		if(!products.isEmpty()) {
 			req.setAttribute("products", products);
