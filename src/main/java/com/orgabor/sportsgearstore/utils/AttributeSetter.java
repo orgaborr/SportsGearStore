@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
-import com.orgabor.sportsgearstore.products.StockDao;
 
 public class AttributeSetter {
 	private StockDao stocks;

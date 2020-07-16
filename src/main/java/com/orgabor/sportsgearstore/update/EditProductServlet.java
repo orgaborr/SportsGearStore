@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.orgabor.sportsgearstore.products.StockDao;
-import com.orgabor.sportsgearstore.products.StockDaoImpl;
+import com.orgabor.sportsgearstore.dao.StockDao;
+import com.orgabor.sportsgearstore.dao.StockDaoImpl;
 import com.orgabor.sportsgearstore.utils.AttributeSetter;
 
 @WebServlet(urlPatterns = "/edit-product.do")
@@ -26,12 +26,13 @@ public class EditProductServlet extends HttpServlet{
 		} else {
 			req.setAttribute("errorMessage", "Product #" + productId + " can not be found");
 			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
-		}
-		
+		}	
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+		ProductUpdater updater = new ProductUpdater(req, stocks);
+		updater.updateProduct();
+		res.sendRedirect("/edit-product.do?product=" + req.getParameter("product"));
 	}
 }
