@@ -45,7 +45,14 @@
 			<label>Category</label>
 			<select name="newCategory">
 				<c:forEach items="${categories.getCategories()}" var="category">
-					<option value="${category}">${category}</option>
+					<c:choose>
+						<c:when test="${category == product.getCategory()}">
+							<option value="${category}" selected>${category}</option>
+						</c:when>
+						<c:otherwise>
+							<option value="${category}">${category}</option>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 			</select><br>
 			
