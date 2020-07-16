@@ -16,15 +16,15 @@ import com.orgabor.sportsgearstore.utils.AttributeSetter;
 public class EditProductServlet extends HttpServlet{
 	
 	private StockDao stocks = new StockDaoImpl();
-	private AttributeSetter attributeSetter = new AttributeSetter(stocks);
+	private AttributeSetter attrSetter = new AttributeSetter(stocks);
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String productId = req.getParameter("product");
-		if(attributeSetter.setProduct(productId, req)) {
+		if(attrSetter.setProduct(productId, req)) {
 			req.getRequestDispatcher("/WEB-INF/views/product-editor.jsp").forward(req, res);
 		} else {
-			req.setAttribute("errorMessage", "Product #" + productId + " can no longer be found");
+			req.setAttribute("errorMessage", "Product #" + productId + " can not be found");
 			req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 		}
 		

@@ -3,6 +3,9 @@ package com.orgabor.sportsgearstore.products;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.orgabor.sportsgearstore.products.Categories;
+import com.orgabor.sportsgearstore.products.Product;
+
 public class StockDaoImpl implements StockDao {
 	
 	private static List<Product> products = new ArrayList<>();

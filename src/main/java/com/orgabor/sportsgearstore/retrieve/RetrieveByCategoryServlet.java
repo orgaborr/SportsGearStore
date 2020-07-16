@@ -17,13 +17,13 @@ import com.orgabor.sportsgearstore.utils.AttributeSetter;
 public class RetrieveByCategoryServlet extends HttpServlet {
 	
 	private StockDao stocks = new StockDaoImpl();
-	private AttributeSetter attributeSetter = new AttributeSetter(stocks);
+	private AttributeSetter attrSetter = new AttributeSetter(stocks);
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String categoryName = req.getParameter("category");
 		Categories category = Categories.valueOf(categoryName);
-		attributeSetter.setProductList(category, req);
+		attrSetter.setProductList(category, req);
 		req.getRequestDispatcher("/WEB-INF/views/product-browser.jsp").forward(req, res);
 	}
 }

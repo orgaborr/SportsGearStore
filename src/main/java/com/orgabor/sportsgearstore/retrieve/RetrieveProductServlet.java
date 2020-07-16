@@ -16,7 +16,7 @@ import com.orgabor.sportsgearstore.utils.AttributeSetter;
 public class RetrieveProductServlet extends HttpServlet {
 	
 	private StockDao stocks = new StockDaoImpl();
-	private AttributeSetter attributeSetter = new AttributeSetter(stocks);
+	private AttributeSetter attrSetter = new AttributeSetter(stocks);
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -25,9 +25,9 @@ public class RetrieveProductServlet extends HttpServlet {
 		
 		if(search != null && !search.equals("")) {
 			if(search.matches("\\d+")) {
-				productFound = attributeSetter.setProduct(search, req);
+				productFound = attrSetter.setProduct(search, req);
 			} else {
-				productFound = attributeSetter.setProductList(search, req);
+				productFound = attrSetter.setProductList(search, req);
 			}
 			
 			if(!productFound) {
