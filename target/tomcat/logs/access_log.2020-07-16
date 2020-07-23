@@ -1,8 +1,0 @@
-127.0.0.1 - - [16/Jul/2020:20:39:02 +0200] "GET /edit-product.do HTTP/1.1" 500 1676 http-bio-8080-exec-1 29
-127.0.0.1 - - [16/Jul/2020:20:39:33 +0200] "GET /retrieve-products.do HTTP/1.1" 200 1634 http-bio-8080-exec-2 473
-127.0.0.1 - - [16/Jul/2020:20:39:34 +0200] "GET /retrieve-products.do?search= HTTP/1.1" 200 1634 http-bio-8080-exec-3 1
-127.0.0.1 - - [16/Jul/2020:20:39:36 +0200] "GET /retrieve-products.do?search=1 HTTP/1.1" 200 1935 http-bio-8080-exec-4 3
-127.0.0.1 - - [16/Jul/2020:20:39:39 +0200] "GET /retrieve-products.do?search=e HTTP/1.1" 200 2850 http-bio-8080-exec-5 2
-127.0.0.1 - - [16/Jul/2020:20:39:41 +0200] "GET /edit-product.do?product=1 HTTP/1.1" 200 3237 http-bio-8080-exec-6 101
-127.0.0.1 - - [16/Jul/2020:20:39:50 +0200] "POST /edit-product.do HTTP/1.1" 500 1678 http-bio-8080-exec-7 3
-127.0.0.1 - - [16/Jul/2020:20:46:53 +0200] "POST /edit-product.do HTTP/1.1" 500 1678 http-bio-8080-exec-8 2

@@ -10,29 +10,44 @@ public class ProductUpdater {
 	private HttpServletRequest req;
 	private StockDao stocks;
 	private int id;
+	private Product oldProduct;
 	private Product newProduct;
 	
 	
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;
 		this.stocks = stocks;
-		this.id = Integer.parseInt(req.getParameter("product"));
+		this.id = Integer.parseInt(req.getParameter("productId"));
+		this.oldProduct = stocks.getProduct(id);
 		this.newProduct = buildProduct();
 	}
 	
-	void updateProduct() {
-		if(!stocks.getProduct(id).equals(newProduct)) {
-			stocks.updateProduct(id, newProduct);
-		}
-	}
-
 	private Product buildProduct() {
-		String name = req.getParameter("newName");
-		String description = req.getParameter("newDescription");
+		String name = oldProduct.getName();
+		String description = oldProduct.getDescription();
 		Categories category = Categories.valueOf(req.getParameter("newCategory"));
-		double price = Double.parseDouble(req.getParameter("newPrice"));
-		int stockIncrease = Integer.parseInt(req.getParameter("addStock"));
+		double price = oldProduct.getPrice();
+		int stock = oldProduct.getInStock();
+		
+		if(!req.getParameter("newName").equals("")) {
+			name = req.getParameter("newName");
+		}
+		if(!req.getParameter("newDescription").equals("")) {
+			description = req.getParameter("newDescription");
+		}
+		if(!req.getParameter("newPrice").equals("")) {
+			price = Double.parseDouble(req.getParameter("newPrice"));
+		}
+		if(!req.getParameter("addStock").equals("")) {
+			stock += Integer.parseInt(req.getParameter("addStock"));
+		}
 		
 		return new Product(id, name, description, category, price, stockIncrease);
+	}
+	
+	void updateProduct() {
+		if(!oldProduct.equals(newProduct)) {
+			stocks.updateProduct(id, newProduct);
+		}
 	}
 }

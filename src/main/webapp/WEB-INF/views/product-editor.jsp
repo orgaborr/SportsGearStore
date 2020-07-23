@@ -34,6 +34,8 @@
 	<h4>Update</h4>
 	<form method="POST" action="/edit-product.do">
 		<fieldset>
+			<input type="hidden" name="productId" value="${product.getId()}">
+		
 			<label>Name</label>
 			<input type="text" name="newName"><br>
 
