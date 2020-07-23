@@ -15,8 +15,9 @@ public class AttributeSetter {
 		this.stocks = stocks;
 	}
 
-	public boolean setProduct(String search, HttpServletRequest req) {
-		Product product = stocks.getProduct(Integer.parseInt(search));
+	public boolean setProduct(String productId, HttpServletRequest req) {
+		int idNumber = Integer.parseInt(productId);
+		Product product = stocks.getProduct(idNumber);
 		if(product != null) {
 			req.setAttribute("product", product);
 			return true;
@@ -24,8 +25,8 @@ public class AttributeSetter {
 		return false;
 	}
 	
-	public boolean setProductList(String search, HttpServletRequest req) {
-		List<Product> products = stocks.retrieveByExpression(search);
+	public boolean setProductList(String expression, HttpServletRequest req) {
+		List<Product> products = stocks.retrieveByExpression(expression);
 		if(!products.isEmpty()) {
 			req.setAttribute("products", products);
 			return true;

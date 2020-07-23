@@ -5,6 +5,6 @@
 		Price: ${product.getPrice()} &euro;<br>
 		In Stock: ${product.getInStock()}<br>
 	</p>
-	<a href="/edit-product.do?product=${product.getId()}" class="btn btn-primary">Edit</a>
-	<a href="/delete-product.do?product=${product.getId()}" class="btn btn-danger">Delete</a>
+	<a href="/edit-product.do?productId=${product.getId()}" class="btn btn-primary">Edit</a>
+	<a href="/delete-product.do?productId=${product.getId()}" class="btn btn-danger">Delete</a>
 </div>

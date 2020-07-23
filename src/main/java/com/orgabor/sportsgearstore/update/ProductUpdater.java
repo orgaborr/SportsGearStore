@@ -9,7 +9,7 @@ import com.orgabor.sportsgearstore.products.Product;
 public class ProductUpdater {
 	private HttpServletRequest req;
 	private StockDao stocks;
-	private int id;
+	private int productId;
 	private Product oldProduct;
 	private Product newProduct;
 	
@@ -17,8 +17,9 @@ public class ProductUpdater {
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;
 		this.stocks = stocks;
-		this.id = Integer.parseInt(req.getParameter("productId"));
-		this.oldProduct = stocks.getProduct(id);
+		int id = Integer.parseInt(req.getParameter("productId"));
+		this.productId = id;
+		this.oldProduct = stocks.getProduct(productId);
 		this.newProduct = buildProduct();
 	}
 	
@@ -36,18 +37,18 @@ public class ProductUpdater {
 			description = req.getParameter("newDescription");
 		}
 		if(!req.getParameter("newPrice").equals("")) {
-			price = Double.parseDouble(req.getParameter("newPrice"));
+			double convertedPrice = Double.parseDouble(req.getParameter("newPrice"));
+			price = convertedPrice;
 		}
 		if(!req.getParameter("addStock").equals("")) {
-			stock += Integer.parseInt(req.getParameter("addStock"));
+			int addedStock = Integer.parseInt(req.getParameter("addStock"));
+			stock += addedStock;
 		}
 		
-		return new Product(id, name, description, category, price, stockIncrease);
+		return new Product(productId, name, description, category, price, stock);
 	}
 	
 	void updateProduct() {
-		if(!oldProduct.equals(newProduct)) {
-			stocks.updateProduct(id, newProduct);
-		}
+		stocks.updateProduct(productId, newProduct);
 	}
 }

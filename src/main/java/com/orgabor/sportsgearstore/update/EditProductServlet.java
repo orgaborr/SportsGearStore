@@ -20,7 +20,7 @@ public class EditProductServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		String productId = req.getParameter("product");
+		String productId = req.getParameter("productId");
 		if(attrSetter.setProduct(productId, req)) {
 			req.getRequestDispatcher("/WEB-INF/views/product-editor.jsp").forward(req, res);
 		} else {
@@ -33,6 +33,6 @@ public class EditProductServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductUpdater updater = new ProductUpdater(req, stocks);
 		updater.updateProduct();
-		res.sendRedirect("/edit-product.do?product=" + req.getParameter("product"));
+		res.sendRedirect("/edit-product.do?productId=" + req.getParameter("productId"));
 	}
 }
