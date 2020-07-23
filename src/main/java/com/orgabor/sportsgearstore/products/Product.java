@@ -40,4 +40,17 @@ public class Product {
 	public int getInStock() {
 		return inStock;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) {
+			return false;
+		}
+		if(!(obj instanceof Product)) {
+			return false;
+		}
+		
+		return this.id == ((Product) obj).getId();
+	}
 }
+
