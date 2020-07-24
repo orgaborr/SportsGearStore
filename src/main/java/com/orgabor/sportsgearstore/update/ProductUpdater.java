@@ -28,21 +28,29 @@ class ProductUpdater {
 		String description = oldProduct.getDescription();
 		double price = oldProduct.getPrice();
 		int stock = oldProduct.getInStock();
+		
 		String categoryParam = req.getParameter("newCategory");
 		Categories category = Categories.valueOf(categoryParam);
 		
-		if(!req.getParameter("newName").equals("")) {
-			name = req.getParameter("newName");
+		String nameParam = req.getParameter("newName");
+		if(!nameParam.equals("")) {
+			name = nameParam;
 		}
-		if(!req.getParameter("newDescription").equals("")) {
-			description = req.getParameter("newDescription");
+		
+		String descriptionParam = req.getParameter("newDescription");
+		if(!descriptionParam.equals("")) {
+			description = descriptionParam;
 		}
-		if(!req.getParameter("newPrice").equals("")) {
-			double convertedPrice = Double.parseDouble(req.getParameter("newPrice"));
+		
+		String priceParam = req.getParameter("newPrice");
+		if(!priceParam.equals("")) {
+			double convertedPrice = Double.parseDouble(priceParam);
 			price = convertedPrice;
 		}
-		if(!req.getParameter("addStock").equals("")) {
-			int addedStock = Integer.parseInt(req.getParameter("addStock"));
+		
+		String addStockParam = req.getParameter("addStock");
+		if(!addStockParam.equals("")) {
+			int addedStock = Integer.parseInt(addStockParam);
 			stock += addedStock;
 		}
 		
