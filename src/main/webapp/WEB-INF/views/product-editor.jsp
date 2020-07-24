@@ -40,9 +40,7 @@
 			<input type="text" name="newName"><br>
 
 			<label>Description</label>
-			<textarea name="newDescription">
-				${product.getDescription()}
-			</textarea><br>
+			<textarea name="newDescription">${product.getDescription()}</textarea><br>
 			
 			<label>Category</label>
 			<select name="newCategory">
