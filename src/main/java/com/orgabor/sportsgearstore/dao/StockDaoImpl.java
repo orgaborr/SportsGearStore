@@ -20,9 +20,9 @@ public class StockDaoImpl implements StockDao {
 		products.add(product);
 	}
 
-	public Product getProduct(int id) {
+	public Product getProduct(int productId) {
 		for(Product product : products) {
-			if(product.getId() == id) {
+			if(product.getProductId() == productId) {
 				return product;
 			}
 		}
@@ -49,15 +49,15 @@ public class StockDaoImpl implements StockDao {
 		return productsByExpression;
 	}
 
-	public void updateProduct(int id, Product updatedProduct) {
-		Product product = getProduct(id);
+	public void updateProduct(int productId, Product updatedProduct) {
+		Product product = getProduct(productId);
 		int productIndex = products.indexOf(product);
 		products.set(productIndex, updatedProduct);	
 	}
 
-	public void deleteProduct(int id) {
+	public void deleteProduct(int productId) {
 		for(Product product : products) {
-			if(product.getId() == id) {
+			if(product.getProductId() == productId) {
 				products.remove(product);
 			}
 		}

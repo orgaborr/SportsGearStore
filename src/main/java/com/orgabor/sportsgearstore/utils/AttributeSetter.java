@@ -16,8 +16,8 @@ public class AttributeSetter {
 	}
 
 	public boolean setProduct(String productId, HttpServletRequest req) {
-		int idNumber = Integer.parseInt(productId);
-		Product product = stocks.getProduct(idNumber);
+		int productIdInt = Integer.parseInt(productId);
+		Product product = stocks.getProduct(productIdInt);
 		if(product != null) {
 			req.setAttribute("product", product);
 			return true;

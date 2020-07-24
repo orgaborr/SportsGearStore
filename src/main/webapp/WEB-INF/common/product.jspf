@@ -1,10 +1,10 @@
 <div class="container">
-	<h4>${product.getName()} (#${product.getId()})</h4>
+	<h4>${product.getName()} (#${product.getProductId()})</h4>
 	<p>
 		Description: ${product.getDescription()}<br>
 		Price: ${product.getPrice()} &euro;<br>
 		In Stock: ${product.getInStock()}<br>
 	</p>
-	<a href="/edit-product.do?productId=${product.getId()}" class="btn btn-primary">Edit</a>
-	<a href="/delete-product.do?productId=${product.getId()}" class="btn btn-danger">Delete</a>
+	<a href="/edit-product.do?productId=${product.getProductId()}" class="btn btn-primary">Edit</a>
+	<a href="/delete-product.do?productId=${product.getProductId()}" class="btn btn-danger">Delete</a>
 </div>

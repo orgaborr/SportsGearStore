@@ -6,7 +6,7 @@ import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
 
-public class ProductUpdater {
+class ProductUpdater {
 	private HttpServletRequest req;
 	private StockDao stocks;
 	private int productId;
@@ -17,8 +17,8 @@ public class ProductUpdater {
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;
 		this.stocks = stocks;
-		int id = Integer.parseInt(req.getParameter("productId"));
-		this.productId = id;
+		int idParam = Integer.parseInt(req.getParameter("productId"));
+		this.productId = idParam;
 		this.oldProduct = stocks.getProduct(productId);
 		this.newProduct = buildProduct();
 	}
@@ -26,9 +26,10 @@ public class ProductUpdater {
 	private Product buildProduct() {
 		String name = oldProduct.getName();
 		String description = oldProduct.getDescription();
-		Categories category = Categories.valueOf(req.getParameter("newCategory"));
 		double price = oldProduct.getPrice();
 		int stock = oldProduct.getInStock();
+		String categoryParam = req.getParameter("newCategory");
+		Categories category = Categories.valueOf(categoryParam);
 		
 		if(!req.getParameter("newName").equals("")) {
 			name = req.getParameter("newName");

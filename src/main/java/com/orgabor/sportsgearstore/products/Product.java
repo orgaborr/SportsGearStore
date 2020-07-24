@@ -1,7 +1,7 @@
 package com.orgabor.sportsgearstore.products;
 
 public class Product {
-	private final int id;
+	private final int productId;
 	private final String name;
 	private final String description;
 	private final Categories category;
@@ -9,7 +9,7 @@ public class Product {
 	private final int inStock;
 	
 	public Product(int id, String name, String description, Categories category, double price, int inStock) {
-		this.id = id;
+		this.productId = id;
 		this.name = name;
 		this.description = description;
 		this.category = category;
@@ -17,8 +17,8 @@ public class Product {
 		this.inStock = inStock;
 	}
 
-	public int getId() {
-		return id;
+	public int getProductId() {
+		return productId;
 	}
 
 	public String getName() {
@@ -50,7 +50,7 @@ public class Product {
 			return false;
 		}
 		
-		return this.id == ((Product) obj).getId();
+		return this.productId == ((Product) obj).getProductId();
 	}
 }
 

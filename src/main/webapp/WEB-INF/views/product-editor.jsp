@@ -5,7 +5,7 @@
 	<table class="table-striped" style="width: 20%">
 		<tr>
 			<td>Product ID #</td>
-			<td>${product.getId()}</td>
+			<td>${product.getProductId()}</td>
 		</tr>
 		<tr>
 			<td>Name</td>
@@ -34,7 +34,7 @@
 	<h4>Update</h4>
 	<form method="POST" action="/edit-product.do">
 		<fieldset>
-			<input type="hidden" name="productId" value="${product.getId()}">
+			<input type="hidden" name="productId" value="${product.getProductId()}">
 		
 			<label>Name</label>
 			<input type="text" name="newName"><br>
