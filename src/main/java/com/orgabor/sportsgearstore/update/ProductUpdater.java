@@ -7,11 +7,11 @@ import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
 
 class ProductUpdater {
-	private HttpServletRequest req;
-	private StockDao stocks;
-	private int productId;
-	private Product oldProduct;
-	private Product newProduct;
+	private final HttpServletRequest req;
+	private final StockDao stocks;
+	private final int productId;
+	private final Product oldProduct;
+	private final Product newProduct;
 	
 	
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
