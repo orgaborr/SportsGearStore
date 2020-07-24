@@ -1,0 +1,11 @@
+com\orgabor\sportsgearstore\beans\CategoriesBean.class
+com\orgabor\sportsgearstore\utils\AttributeSetter.class
+com\orgabor\sportsgearstore\dao\StockDaoImpl.class
+com\orgabor\sportsgearstore\delete\DeleteProductServlet.class
+com\orgabor\sportsgearstore\products\Product.class
+com\orgabor\sportsgearstore\update\EditProductServlet.class
+com\orgabor\sportsgearstore\dao\StockDao.class
+com\orgabor\sportsgearstore\products\Categories.class
+com\orgabor\sportsgearstore\update\ProductUpdater.class
+com\orgabor\sportsgearstore\retrieve\RetrieveByCategoryServlet.class
+com\orgabor\sportsgearstore\retrieve\RetrieveProductServlet.class

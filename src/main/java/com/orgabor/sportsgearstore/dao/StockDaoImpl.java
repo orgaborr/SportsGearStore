@@ -59,6 +59,7 @@ public class StockDaoImpl implements StockDao {
 		for(Product product : products) {
 			if(product.getProductId() == productId) {
 				products.remove(product);
+				break;
 			}
 		}
 	}

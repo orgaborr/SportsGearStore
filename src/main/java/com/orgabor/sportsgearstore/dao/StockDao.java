@@ -10,6 +10,6 @@ public interface StockDao {
 	public Product getProduct(int productId);
 	public List<Product> retrieveByCategory(Categories category);
 	public List<Product> retrieveByExpression(String expression);
-	public void updateProduct(int id, Product updatedProduct);
-	public void deleteProduct(int id);
+	public void updateProduct(int productId, Product updatedProduct);
+	public void deleteProduct(int productId);
 }
