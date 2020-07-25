@@ -15,6 +15,7 @@ class ProductCreator {
 	}
 	
 	private Product buildProduct(HttpServletRequest req) {
+		return null;
 		
 	}
 	
