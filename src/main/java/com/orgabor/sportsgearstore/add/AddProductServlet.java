@@ -25,6 +25,13 @@ public class AddProductServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductCreator creator = new ProductCreator(req);
-		stocks.addProduct(creator.buildProduct());
+		Product newProduct = creator.buildProduct();
+		if(stocks.getProduct(newProduct.getProductId()) == null) {
+			stocks.addProduct(newProduct);
+			res.sendRedirect("/retrieve-products.do?search=" + newProduct.getProductId());
+		} else {
+			req.setAttribute("errorMessage", "Product with Product ID #" + newProduct.getProductId() + "already in database");
+			req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);
+		}	
 	}
 }

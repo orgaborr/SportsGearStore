@@ -30,6 +30,10 @@
 			<input type="submit" class="btn btn-success" value="Add Product">
 		</fieldset>
 	</form>
+	
+	<c:if test="${errorMessage != null}">
+		<p><font color="red">${errorMessage}</font></p>
+	</c:if>
 </div>
 
 <%@ include file="../common/footer.jspf"%>
