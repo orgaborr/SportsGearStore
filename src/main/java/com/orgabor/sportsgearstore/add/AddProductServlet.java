@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.dao.StockDaoImpl;
+import com.orgabor.sportsgearstore.products.Product;
 
 @WebServlet(urlPatterns = "/add-product.do")
 public class AddProductServlet extends HttpServlet {
@@ -23,6 +24,7 @@ public class AddProductServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+		ProductCreator creator = new ProductCreator(req);
+		stocks.addProduct(creator.buildProduct());
 	}
 }
