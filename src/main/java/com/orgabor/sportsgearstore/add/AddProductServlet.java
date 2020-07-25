@@ -20,4 +20,9 @@ public class AddProductServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+	}
 }

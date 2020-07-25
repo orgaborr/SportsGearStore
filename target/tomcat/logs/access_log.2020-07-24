@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:53:44 +0200] "GET /retrieve-products.do?search=1 HTTP/1.1" 200 1939 http-bio-8080-exec-1 468
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:53:44 +0200] "GET /webjars/bootstrap/3.3.6/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:53:44 +0200] "GET /webjars/bootstrap/3.3.6/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:53:44 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-3 2
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:53:47 +0200] "GET /add-product.do HTTP/1.1" 200 2577 http-bio-8080-exec-6 61
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:56:54 +0200] "GET /add-product.do HTTP/1.1" 200 2577 http-bio-8080-exec-10 67
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:56:54 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:56:54 +0200] "GET /webjars/bootstrap/3.3.6/css/bootstrap.min.css HTTP/1.1" 304 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:56:54 +0200] "GET /webjars/bootstrap/3.3.6/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [24/Jul/2020:19:56:59 +0200] "POST /add-product.do HTTP/1.1" 405 1067 http-bio-8080-exec-10 2
