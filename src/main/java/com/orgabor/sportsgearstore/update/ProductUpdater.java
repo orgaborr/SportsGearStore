@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
+import com.orgabor.sportsgearstore.products.Product.Builder;
 
 class ProductUpdater {
 	private final HttpServletRequest req;
@@ -54,7 +55,13 @@ class ProductUpdater {
 			stock += addedStock;
 		}
 		
-		return new Product(productId, name, description, category, price, stock);
+		return new Product.Builder(productId)
+				.withName(name)
+				.withDescription(description)
+				.ofCategory(category)
+				.forPrice(price)
+				.withStock(stock)
+				.build();	
 	}
 	
 	void updateProduct() {

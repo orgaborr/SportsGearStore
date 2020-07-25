@@ -16,9 +16,8 @@ public class Product {
 		private double price;
 		private int inStock;
 		
-		public Builder(String productId) {
-			int productIdInt = Integer.parseInt(productId);
-			this.productId = productIdInt;
+		public Builder(int productId) {
+			this.productId = productId;
 		}
 		
 		public Builder withName(String name) {
@@ -31,21 +30,18 @@ public class Product {
 			return this;
 		}
 			
-		public Builder ofCategory(String category) {
-			Categories categoryEnum = Categories.valueOf(category);
-			this.category = categoryEnum;
+		public Builder ofCategory(Categories category) {
+			this.category = category;
 			return this;
 		}
 		
-		public Builder forPrice(String price) {
-			double priceDouble = Double.parseDouble(price);
-			this.price = priceDouble;
+		public Builder forPrice(double price) {
+			this.price = price;
 			return this;
 		}
 		
-		public Builder withStock(String inStock) {
-			int inStockInt = Integer.parseInt(inStock);
-			this.inStock = inStockInt;
+		public Builder withStock(int inStock) {
+			this.inStock = inStock;
 			return this;
 		}
 		
