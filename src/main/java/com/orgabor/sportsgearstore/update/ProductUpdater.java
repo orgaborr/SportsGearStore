@@ -1,27 +1,51 @@
 package com.orgabor.sportsgearstore.update;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
-import com.orgabor.sportsgearstore.products.Product.Builder;
 
 class ProductUpdater {
 	private final HttpServletRequest req;
 	private final StockDao stocks;
-	private final int productId;
-	private final Product oldProduct;
-	private final Product newProduct;
+//	private final int productId;
+//	private final Product oldProduct;
+//	private final Product newProduct;
+//	private Map<String, Object> params;
 	
 	
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;
 		this.stocks = stocks;
-		int idParam = Integer.parseInt(req.getParameter("productId"));
-		this.productId = idParam;
-		this.oldProduct = stocks.getProduct(productId);
-		this.newProduct = buildProduct();
+//		this.params = new HashMap<>();
+//		int idParam = Integer.parseInt(req.getParameter("productId"));
+//		this.productId = idParam;
+//		this.oldProduct = stocks.getProduct(productId);
+//		this.newProduct = buildProduct();
+	}
+	
+	private void updateParams() {
+		
+	}
+	
+	private Map<String, Object> collectParams(Product product) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("productId", product.getProductId());
+		params.put("name", product.getName());
+		params.put("description", product.getDescription());
+		params.put("category", product.getCategory());
+		params.put("price", product.getPrice());
+		params.put("inStock", product.getInStock());
+		return params;
+	}
+	
+	private Product callOldProduct() {
+		int id = Integer.parseInt(req.getParameter("productId"));
+		return stocks.getProduct(id);
 	}
 	
 	private Product buildProduct() {
