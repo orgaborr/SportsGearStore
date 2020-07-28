@@ -9,7 +9,7 @@ import com.orgabor.sportsgearstore.products.Categories;
 
 class UpdateParamExtractor {
 	private final ServletRequest req;
-	Map<String, Object> params;
+	private Map<String, Object> params;
 	
 	UpdateParamExtractor(ServletRequest req) {
 		this.req = req;
