@@ -32,6 +32,8 @@ class ProductUpdater {
 		
 	}
 	
+	
+	
 	private Map<String, Object> collectParams(Product product) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("productId", product.getProductId());
