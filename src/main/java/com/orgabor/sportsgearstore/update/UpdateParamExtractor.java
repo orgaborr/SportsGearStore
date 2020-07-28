@@ -24,11 +24,20 @@ class UpdateParamExtractor {
 	
 	private void convertParams() {
 		Categories categoryEnum = Categories.valueOf((String) params.get("category"));
-		params.replace("category", categoryEnum);	
-		double priceDouble = Double.parseDouble((String) params.get("price"));
-		params.replace("price", priceDouble);	
-		int inStockInt = Integer.parseInt((String) params.get("inStock"));
-		params.replace("inStock", inStockInt);
+		params.replace("category", categoryEnum);
+		
+		if(params.get("price").equals("")) {
+			params.replace("price", null);
+		} else {
+			double priceDouble = Double.parseDouble((String) params.get("price"));
+			params.replace("price", priceDouble);	
+		}
+		if(params.get("inStock").equals("")) {
+			params.replace("inStock", null);
+		} else {
+			int inStockInt = Integer.parseInt((String) params.get("inStock"));
+			params.replace("inStock", inStockInt);
+		}
 	}
 	
 	private void readParams() { 
