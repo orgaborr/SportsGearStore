@@ -17,6 +17,31 @@ class ProductUpdater {
 		this.stocks = stocks;
 	}
 	
+	void updateProduct() {
+		Product product = buildProduct();
+		int productId = product.getProductId();
+		stocks.updateProduct(productId, product);
+	}
+	
+	private Product buildProduct() {
+		Map<String, Object> productParams = overwriteParams();
+		
+		int productId = (int) productParams.get("productId");
+		String name = (String) productParams.get("name");
+		String description = (String) productParams.get("description");
+		Categories category = (Categories) productParams.get("category");
+		double price = (double) productParams.get("price");
+		int stock = (int) productParams.get("inStock");
+		
+		return new Product.Builder(productId)
+				.withName(name)
+				.withDescription(description)
+				.ofCategory(category)
+				.forPrice(price)
+				.withStock(stock)
+				.build();	
+	}
+	
 	private Map<String, Object> overwriteParams() {
 		int id = Integer.parseInt(req.getParameter("productId"));
 		Map<String, Object> oldParams = new ProductCaller(stocks, id).returnParams();
@@ -35,34 +60,10 @@ class ProductUpdater {
 			oldParams.replace("price", newParams.get("price"));
 		}
 		if(newParams.get("inStock") != null) {
-			int stock = (Integer) oldParams.get("inStock") + (Integer) newParams.get("inStock");
+			int stock = (int) oldParams.get("inStock") + (int) newParams.get("inStock");
 			oldParams.replace("inStock", stock);
 		}
 		
 		return oldParams;
-	}
-	
-	private Product buildProduct() {
-		Map<String, Object> productParams = overwriteParams();
-		int productId = (int) productParams.get("productId");
-		String name = (String) productParams.get("name");
-		String description = (String) productParams.get("description");
-		Categories category = (Categories) productParams.get("category");
-		double price = (double) productParams.get("price");
-		int stock = (int) productParams.get("inStock");
-		
-		return new Product.Builder(productId)
-				.withName(name)
-				.withDescription(description)
-				.ofCategory(category)
-				.forPrice(price)
-				.withStock(stock)
-				.build();	
-	}
-	
-	void updateProduct() {
-		Product product = buildProduct();
-		int productId = product.getProductId();
-		stocks.updateProduct(productId, product);
 	}
 }
