@@ -1,10 +1,16 @@
-<div class="container">
-	<h4>${product.getName()} (#${product.getProductId()})</h4>
-	<p>
-		Description: ${product.getDescription()}<br>
-		Price: ${product.getPrice()} &euro;<br>
-		In Stock: ${product.getInStock()}<br>
-	</p>
-	<a href="/edit-product.do?productId=${product.getProductId()}" class="btn btn-primary">Edit</a>
-	<a href="/delete-product.do?productId=${product.getProductId()}" class="btn btn-danger">Delete</a>
+<div class="container rounded shadow">
+   <div>
+		<h5>${product.getName()}#${product.getProductId()}</h5>
+	
+		<p>
+			<strong>Description: </strong>${product.getDescription()}<br>
+			<strong>Category: </strong>${product.getCategory()}<br>
+			<strong>Price: </strong>&euro;${product.getPrice()}<br>
+			<strong>In Stock: </strong>${product.getInStock()}<br>
+		</p>
+		<a href="/edit-product.do?productId=${product.getProductId()}"
+			class="btn btn-primary">Edit</a> <a
+			href="/delete-product.do?productId=${product.getProductId()}"
+			class="btn btn-danger">Delete</a>
+	</div>
 </div>
