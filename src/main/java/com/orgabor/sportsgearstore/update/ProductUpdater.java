@@ -43,7 +43,7 @@ class ProductUpdater {
 	}
 	
 	private Map<String, Object> overwriteParams() {
-		int id = Integer.parseInt(req.getParameter("productId"));
+ 		int id = Integer.parseInt(req.getParameter("productId"));
 		Map<String, Object> oldParams = new ProductCaller(stocks, id).returnParams();
 		Map<String, Object> newParams = new UpdateParamExtractor(req).returnParams();
 		
