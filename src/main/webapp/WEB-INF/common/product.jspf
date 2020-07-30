@@ -1,6 +1,7 @@
 <div class="container rounded shadow">
+   <img src="${product.getImg()}">
    <div>
-		<h5>${product.getName()}#${product.getProductId()}</h5>
+		<h4>${product.getName()} #${product.getProductId()}</h4>
 	
 		<p>
 			<strong>Description: </strong>${product.getDescription()}<br>

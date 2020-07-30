@@ -27,6 +27,10 @@
 			<td>In Stock</td>
 			<td>${product.getInStock()}</td>
 		</tr>
+		<tr>
+			<td>Image</td>
+			<td>${product.getImg()}</td>
+		</tr>
 	</table>
 </div>
 
@@ -61,6 +65,9 @@
 			
 			<label>Increase stock by (can be negative value)</label>
 			<input type="text" name="addStock"><br>
+			
+			<label>Use image</label>
+			<input type="file" name="img" accept="image/png, image/jpeg"><br>
 			
 			<input type="submit" class="btn btn-warning" value="Save Changes">
 		</fieldset>

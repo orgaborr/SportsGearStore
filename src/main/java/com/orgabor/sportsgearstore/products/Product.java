@@ -7,6 +7,7 @@ public class Product {
 	private final Categories category;
 	private final double price;
 	private final int inStock;
+	private final String img;
 	
 	public static class Builder {
 		private int productId;
@@ -15,6 +16,7 @@ public class Product {
 		private Categories category;
 		private double price;
 		private int inStock;
+		private String img;
 		
 		public Builder(int productId) {
 			this.productId = productId;
@@ -45,6 +47,11 @@ public class Product {
 			return this;
 		}
 		
+		public Builder withImg(String img) {
+			this.img = img;
+			return this;
+		}
+		
 		public Product build() {
 			return new Product(this);
 		}
@@ -57,6 +64,7 @@ public class Product {
 		this.category = builder.category;
 		this.price = builder.price;
 		this.inStock = builder.inStock;
+		this.img = builder.img;
 	}
 
 	public int getProductId() {
@@ -81,6 +89,10 @@ public class Product {
 
 	public int getInStock() {
 		return inStock;
+	}
+	
+	public String getImg() {
+		return img;
 	}
 	
 	@Override

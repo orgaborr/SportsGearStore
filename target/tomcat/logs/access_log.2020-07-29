@@ -1,4 +1,0 @@
-127.0.0.1 - - [29/Jul/2020:17:49:40 +0200] "GET /retrieve-products.do HTTP/1.1" 200 1701 http-bio-8080-exec-2 491
-127.0.0.1 - - [29/Jul/2020:17:49:40 +0200] "GET /style/style.css HTTP/1.1" 200 335 http-bio-8080-exec-3 3
-127.0.0.1 - - [29/Jul/2020:17:49:40 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-6 2
-127.0.0.1 - - [29/Jul/2020:17:49:44 +0200] "GET /retrieve-by-category.do?category=CYCLING HTTP/1.1" 200 2006 http-bio-8080-exec-5 3

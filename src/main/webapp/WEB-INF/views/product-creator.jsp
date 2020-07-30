@@ -27,6 +27,9 @@
 			<label>In Stock</label>
 			<input type="text" name="inStock"><br>
 			
+			<label>Image</label>
+			<input type="text" name="img"><br>
+			
 			<input type="submit" class="btn btn-success" value="Add Product">
 		</fieldset>
 	</form>
