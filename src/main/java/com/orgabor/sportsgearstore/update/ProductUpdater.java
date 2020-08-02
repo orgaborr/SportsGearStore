@@ -77,7 +77,7 @@ class ProductUpdater {
 	}
 	
 	private String createImgPath(String imgName, Categories category) {
-		String imgPath = "../../images/" + category.name().toLowerCase() + "/" + imgName;
+		String imgPath = stocks.getImgSourceFolder() + category.name().toLowerCase() + "/" + imgName;
 		return imgPath;
 	}
 }

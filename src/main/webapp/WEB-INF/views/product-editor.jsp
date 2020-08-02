@@ -66,7 +66,7 @@
 			<label>Increase stock by (can be negative value)</label>
 			<input type="text" name="addStock"><br>
 			
-			<label>Use image</label>
+			<label>Use image (insert image name with extension)</label>
 			<input type="text" name="newImg"><br>
 			
 			<input type="submit" class="btn btn-warning" value="Save Changes">
