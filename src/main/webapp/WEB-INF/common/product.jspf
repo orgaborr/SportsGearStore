@@ -1,17 +1,14 @@
 <div class="container rounded shadow">
    <img src="${product.getImg()}">
-   <div>
+   <div class="params">
 		<h4>${product.getName()} #${product.getProductId()}</h4>
-	
-		<p>
-			<strong>Description: </strong>${product.getDescription()}<br>
-			<strong>Category: </strong>${product.getCategory()}<br>
-			<strong>Price: </strong>&euro;${product.getPrice()}<br>
-			<strong>In Stock: </strong>${product.getInStock()}<br>
-		</p>
+		<p><strong>Description: </strong>${product.getDescription()}</p>
+		<p><strong>Category: </strong>${product.getCategory()}</p>
+		<p><strong>Price: </strong>&euro;${product.getPrice()}</p>
+		<p><strong>In Stock: </strong>${product.getInStock()}</p>
 		<a href="/edit-product.do?productId=${product.getProductId()}"
-			class="btn btn-primary">Edit</a> <a
-			href="/delete-product.do?productId=${product.getProductId()}"
+			class="btn btn-primary">Edit</a>
+		<a href="/delete-product.do?productId=${product.getProductId()}"
 			class="btn btn-danger">Delete</a>
 	</div>
 </div>
