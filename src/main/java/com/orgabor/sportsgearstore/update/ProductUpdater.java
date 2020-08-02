@@ -8,6 +8,7 @@ import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
 import com.orgabor.sportsgearstore.products.ProductBuilder;
+import com.orgabor.sportsgearstore.utils.ImgSourceFolder;
 
 class ProductUpdater {
 	private final HttpServletRequest req;
@@ -57,7 +58,7 @@ class ProductUpdater {
 	}
 	
 	private String createImgPath(String imgName, Categories category) {
-		String imgPath = stocks.getImgSourceFolder() + category.name().toLowerCase() + "/" + imgName;
+		String imgPath = ImgSourceFolder.getImgSourceFolder() + category.name().toLowerCase() + "/" + imgName;
 		return imgPath;
 	}
 }

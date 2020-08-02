@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
+import com.orgabor.sportsgearstore.products.ProductBuilder;
+import com.orgabor.sportsgearstore.utils.ImgSourceFolder;
 
 class ProductCreator {
 	private final HttpServletRequest req;
@@ -19,13 +21,7 @@ class ProductCreator {
 	Product buildProduct() {
 		readParams();
 		convertParams();
-		return new Product.Builder((Integer) params.get("productId"))
-				.withName((String) params.get("name"))
-				.withDescription((String) params.get("description"))
-				.ofCategory((Categories) params.get("category"))
-				.forPrice((Double) params.get("price"))
-				.withStock((Integer) params.get("inStock"))
-				.build();
+		return ProductBuilder.buildProduct(params);
 	}
 	
 	private void convertParams() {
@@ -37,6 +33,10 @@ class ProductCreator {
 		params.replace("price", priceDouble);	
 		int inStockInt = Integer.parseInt((String) params.get("inStock"));
 		params.replace("inStock", inStockInt);
+		String imgPath = ImgSourceFolder.getImgSourceFolder() + 
+						 categoryEnum.name().toLowerCase() + "/" +
+						 params.get("img");
+		params.replace("img", imgPath);
 	}
 	
 	private void readParams() {

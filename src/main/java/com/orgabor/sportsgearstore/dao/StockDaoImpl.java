@@ -5,13 +5,13 @@ import java.util.List;
 
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
+import com.orgabor.sportsgearstore.utils.ImgSourceFolder;
 
-public class StockDaoImpl implements StockDao {
-	private final static String imgSourceFolder = "../../images/";
+public class StockDaoImpl implements StockDao {	
 	
 	private static List<Product> products = new ArrayList<>();
 	static {
-		products.add(new Product.Builder(1).withName("Bicycle").withDescription("A cool bike").ofCategory(Categories.CYCLING).forPrice(329.99).withStock(5).withImg(imgSourceFolder + "cycling/bicycle.png").build());
+		products.add(new Product.Builder(1).withName("Bicycle").withDescription("A cool bike").ofCategory(Categories.CYCLING).forPrice(329.99).withStock(5).withImg(ImgSourceFolder.getImgSourceFolder() + "cycling/bicycle.png").build());
 		products.add(new Product.Builder(2).withName("Tent").withDescription("Tent for 3").ofCategory(Categories.CAMPING).forPrice(99.99).withStock(4).build());
 		products.add(new Product.Builder(3).withName("Rope").withDescription("50m dynamic rope").ofCategory(Categories.CLIMBING).forPrice(299.99).withStock(2).build());
 		products.add(new Product.Builder(4).withName("Tent Stakes").withDescription("A set of 10 tent stakes").ofCategory(Categories.CAMPING).forPrice(5.99).withStock(10).build());
@@ -69,10 +69,5 @@ public class StockDaoImpl implements StockDao {
 				break;
 			}
 		}
-	}
-
-	@Override
-	public String getImgSourceFolder() {
-		return imgSourceFolder;
 	}
 }

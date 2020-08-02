@@ -12,5 +12,4 @@ public interface StockDao {
 	public List<Product> retrieveByExpression(String expression);
 	public void updateProduct(int productId, Product updatedProduct);
 	public void deleteProduct(int productId);
-	public String getImgSourceFolder();
 }
