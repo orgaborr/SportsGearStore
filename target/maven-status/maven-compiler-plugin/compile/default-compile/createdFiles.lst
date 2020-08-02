@@ -10,6 +10,7 @@ com\orgabor\sportsgearstore\update\ProductCaller.class
 com\orgabor\sportsgearstore\add\ProductCreator.class
 com\orgabor\sportsgearstore\beans\CategoriesBean.class
 com\orgabor\sportsgearstore\products\Product.class
+com\orgabor\sportsgearstore\products\ProductBuilder.class
 com\orgabor\sportsgearstore\dao\StockDao.class
 com\orgabor\sportsgearstore\update\ProductUpdater.class
 com\orgabor\sportsgearstore\products\Product$Builder.class

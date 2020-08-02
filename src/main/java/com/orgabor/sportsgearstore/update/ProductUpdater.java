@@ -7,47 +7,28 @@ import javax.servlet.http.HttpServletRequest;
 import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
+import com.orgabor.sportsgearstore.products.ProductBuilder;
 
 class ProductUpdater {
 	private final HttpServletRequest req;
-	private final StockDao stocks;	
+	private final StockDao stocks;
+	private final int productId;
 	
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;
 		this.stocks = stocks;
+		this.productId = Integer.parseInt(req.getParameter("productId"));
 	}
 	
 	void updateProduct() {
-		Product product = buildProduct();
-		int productId = product.getProductId();
+		Map<String, Object> oldParams = new ProductCaller(stocks, productId).returnParams();
+		Map<String, Object> newParams = new UpdateParamExtractor(req).returnParams();
+		Product product = ProductBuilder.buildProduct(overwriteParams(oldParams, newParams));
 		stocks.updateProduct(productId, product);
 	}
 	
-	private Product buildProduct() {
-		Map<String, Object> productParams = overwriteParams();
+	private Map<String, Object> overwriteParams(Map<String, Object> oldParams, Map<String, Object> newParams) {
 		
-		int productId = (int) productParams.get("productId");
-		String name = (String) productParams.get("name");
-		String description = (String) productParams.get("description");
-		Categories category = (Categories) productParams.get("category");
-		double price = (double) productParams.get("price");
-		int stock = (int) productParams.get("inStock");
-		String img = (String) productParams.get("img");
-		
-		return new Product.Builder(productId)
-				.withName(name)
-				.withDescription(description)
-				.ofCategory(category)
-				.forPrice(price)
-				.withStock(stock)
-				.withImg(img)
-				.build();	
-	}
-	
-	private Map<String, Object> overwriteParams() {
- 		int id = Integer.parseInt(req.getParameter("productId"));
-		Map<String, Object> oldParams = new ProductCaller(stocks, id).returnParams();
-		Map<String, Object> newParams = new UpdateParamExtractor(req).returnParams();
 		
 		if(!newParams.get("name").equals("")) {
 			oldParams.replace("name", newParams.get("name"));
@@ -71,8 +52,7 @@ class ProductUpdater {
 					(Categories) newParams.get("category"));
 			oldParams.replace("img", newImage);
 		}
-		
-		
+			
 		return oldParams;
 	}
 	
