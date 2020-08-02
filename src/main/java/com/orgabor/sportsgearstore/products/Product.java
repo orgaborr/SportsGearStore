@@ -94,17 +94,5 @@ public class Product {
 	public String getImg() {
 		return img;
 	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj == null) {
-			return false;
-		}
-		if(!(obj instanceof Product)) {
-			return false;
-		}
-		
-		return this.productId == ((Product) obj).getProductId();
-	}
 }
 
