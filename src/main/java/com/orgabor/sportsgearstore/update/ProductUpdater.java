@@ -8,7 +8,7 @@ import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
 import com.orgabor.sportsgearstore.products.ProductBuilder;
-import com.orgabor.sportsgearstore.utils.ImgSourceFolder;
+import com.orgabor.sportsgearstore.utils.ImgPathBuilder;
 
 class ProductUpdater {
 	private final HttpServletRequest req;
@@ -29,8 +29,6 @@ class ProductUpdater {
 	}
 	
 	private Map<String, Object> overwriteParams(Map<String, Object> oldParams, Map<String, Object> newParams) {
-		
-		
 		if(!newParams.get("name").equals("")) {
 			oldParams.replace("name", newParams.get("name"));
 		}
@@ -47,18 +45,13 @@ class ProductUpdater {
 			int stock = (int) oldParams.get("inStock") + (int) newParams.get("inStock");
 			oldParams.replace("inStock", stock);
 		}
-		
 		if(newParams.get("img") != null) {
-			String newImage = createImgPath((String) newParams.get("img"),
-					(Categories) newParams.get("category"));
+			String newImage = ImgPathBuilder.buildImgPath(
+								(Categories) newParams.get("category"),
+								(String) newParams.get("img"));
 			oldParams.replace("img", newImage);
 		}
 			
 		return oldParams;
-	}
-	
-	private String createImgPath(String imgName, Categories category) {
-		String imgPath = ImgSourceFolder.getImgSourceFolder() + category.name().toLowerCase() + "/" + imgName;
-		return imgPath;
 	}
 }

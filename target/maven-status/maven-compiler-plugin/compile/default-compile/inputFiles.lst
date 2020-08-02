@@ -8,8 +8,8 @@ C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearsto
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\retrieve\RetrieveByCategoryServlet.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\beans\CategoriesBean.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\delete\DeleteProductServlet.java
-C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\utils\ImgSourceFolder.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\update\ProductCaller.java
+C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\utils\ImgPathBuilder.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\retrieve\RetrieveProductServlet.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\utils\AttributeSetter.java
 C:\Users\user\Projects\sports-gear-store\src\main\java\com\orgabor\sportsgearstore\dao\StockDaoImpl.java
