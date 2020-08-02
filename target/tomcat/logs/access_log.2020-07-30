@@ -1,6 +1,0 @@
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /edit-product.do?productId=1 HTTP/1.1" 200 3507 http-bio-8080-exec-1 476
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /webjars/bootstrap/3.3.6/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8080-exec-3 1
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-2 3
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /style/style.css HTTP/1.1" 200 343 http-bio-8080-exec-5 2
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /webjars/bootstrap/3.3.6/css/bootstrap.min.css HTTP/1.1" 200 121260 http-bio-8080-exec-4 2
-127.0.0.1 - - [30/Jul/2020:16:44:54 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-9 2

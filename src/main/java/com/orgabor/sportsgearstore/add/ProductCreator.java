@@ -46,5 +46,6 @@ class ProductCreator {
 		params.put("category", req.getParameter("category"));
 		params.put("price", req.getParameter("price"));
 		params.put("inStock", req.getParameter("inStock"));
+		params.put("img", req.getParameter("img"));
 	}
 }

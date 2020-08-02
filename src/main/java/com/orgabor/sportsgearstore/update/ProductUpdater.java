@@ -32,6 +32,7 @@ class ProductUpdater {
 		Categories category = (Categories) productParams.get("category");
 		double price = (double) productParams.get("price");
 		int stock = (int) productParams.get("inStock");
+		String img = (String) productParams.get("img");
 		
 		return new Product.Builder(productId)
 				.withName(name)
@@ -39,6 +40,7 @@ class ProductUpdater {
 				.ofCategory(category)
 				.forPrice(price)
 				.withStock(stock)
+				.withImg(img)
 				.build();	
 	}
 	
@@ -64,6 +66,18 @@ class ProductUpdater {
 			oldParams.replace("inStock", stock);
 		}
 		
+		if(newParams.get("img") != null) {
+			String newImage = createImgPath((String) newParams.get("img"),
+					(Categories) newParams.get("category"));
+			oldParams.replace("img", newImage);
+		}
+		
+		
 		return oldParams;
+	}
+	
+	private String createImgPath(String imgName, Categories category) {
+		String imgPath = "../../images/" + category.name().toLowerCase() + "/" + imgName;
+		return imgPath;
 	}
 }

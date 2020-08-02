@@ -24,6 +24,7 @@ class ProductCaller {
 		params.put("category", product.getCategory());
 		params.put("price", product.getPrice());
 		params.put("inStock", product.getInStock());
+		params.put("img", product.getImg());
 		return params;
 	}
 }

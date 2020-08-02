@@ -46,5 +46,6 @@ class UpdateParamExtractor {
 		params.put("category", req.getParameter("newCategory"));
 		params.put("price", req.getParameter("newPrice"));
 		params.put("inStock", req.getParameter("addStock"));
+		params.put("img", req.getParameter("newImg"));
 	}
 }

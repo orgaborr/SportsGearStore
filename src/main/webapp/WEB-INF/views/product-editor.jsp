@@ -67,7 +67,7 @@
 			<input type="text" name="addStock"><br>
 			
 			<label>Use image</label>
-			<input type="file" name="img" accept="image/png, image/jpeg"><br>
+			<input type="text" name="newImg"><br>
 			
 			<input type="submit" class="btn btn-warning" value="Save Changes">
 		</fieldset>
