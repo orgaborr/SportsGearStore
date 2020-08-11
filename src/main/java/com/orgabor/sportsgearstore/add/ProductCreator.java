@@ -1,5 +1,6 @@
 package com.orgabor.sportsgearstore.add;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +30,8 @@ class ProductCreator {
 		params.replace("productId", productIdInt);	
 		Categories categoryEnum = Categories.valueOf((String) params.get("category"));
 		params.replace("category", categoryEnum);	
-		double priceDouble = Double.parseDouble((String) params.get("price"));
-		params.replace("price", priceDouble);	
+		BigDecimal priceBigDecimal = new BigDecimal((String) params.get("price"));
+		params.replace("price", priceBigDecimal);	
 		int inStockInt = Integer.parseInt((String) params.get("inStock"));
 		params.replace("inStock", inStockInt);
 		String imgPath = ImgPathBuilder.buildImgPath(
