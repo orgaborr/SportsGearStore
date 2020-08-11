@@ -1,24 +1,26 @@
 package com.orgabor.sportsgearstore.products;
 
+import java.math.BigDecimal;
+
 public class Product {
-	private final int productId;
+	private final long productId;
 	private final String name;
 	private final String description;
 	private final Categories category;
-	private final double price;
+	private final BigDecimal price;
 	private final int inStock;
 	private final String img;
 	
 	public static class Builder {
-		private int productId;
+		private long productId;
 		private String name;
 		private String description;
 		private Categories category;
-		private double price;
+		private BigDecimal price;
 		private int inStock;
 		private String img;
 		
-		public Builder(int productId) {
+		public Builder(long productId) {
 			this.productId = productId;
 		}
 		
@@ -37,7 +39,7 @@ public class Product {
 			return this;
 		}
 		
-		public Builder forPrice(double price) {
+		public Builder forPrice(BigDecimal price) {
 			this.price = price;
 			return this;
 		}
@@ -67,7 +69,7 @@ public class Product {
 		this.img = builder.img;
 	}
 
-	public int getProductId() {
+	public long getProductId() {
 		return productId;
 	}
 
@@ -83,7 +85,7 @@ public class Product {
 		return category;
 	}
 
-	public double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
