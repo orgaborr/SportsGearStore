@@ -1,5 +1,6 @@
 package com.orgabor.sportsgearstore.update;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +30,8 @@ class UpdateParamExtractor {
 		if(params.get("price").equals("")) {
 			params.replace("price", null);
 		} else {
-			double priceDouble = Double.parseDouble((String) params.get("price"));
-			params.replace("price", priceDouble);	
+			BigDecimal priceBigDecimal = new BigDecimal((String) params.get("price"));
+			params.replace("price", priceBigDecimal);	
 		}
 		if(params.get("inStock").equals("")) {
 			params.replace("inStock", null);
