@@ -1,5 +1,6 @@
 package com.orgabor.sportsgearstore.dao;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,14 +16,14 @@ public class StockDaoImpl implements StockDao {
 								.withName("Bicycle")
 								.withDescription("A cool bike")
 								.ofCategory(Categories.CYCLING)
-								.forPrice(329.99).withStock(5)
+								.forPrice(new BigDecimal("329.99")).withStock(5)
 								.withImg(ImgPathBuilder.buildImgPath(Categories.CYCLING, "bicycle.png"))
 								.build());
 		products.add(new Product.Builder(2)
 								.withName("Tent")
 								.withDescription("Tent for 3")
 								.ofCategory(Categories.CAMPING)
-								.forPrice(99.99)
+								.forPrice(new BigDecimal("99.99"))
 								.withStock(4)
 								.withImg(ImgPathBuilder.buildImgPath(Categories.CAMPING, "tent.png"))
 								.build());
@@ -30,15 +31,15 @@ public class StockDaoImpl implements StockDao {
 								.withName("Rope")
 								.withDescription("50m dynamic rope")
 								.ofCategory(Categories.CLIMBING)
-								.forPrice(299.99).
-								withStock(2)
+								.forPrice(new BigDecimal("299.99"))
+								.withStock(2)
 								.withImg(ImgPathBuilder.buildImgPath(Categories.CLIMBING, "rope.jpg"))
 								.build());
 		products.add(new Product.Builder(4)
 								.withName("Tent Stakes")
 								.withDescription("A set of 10 tent stakes")
 								.ofCategory(Categories.CAMPING)
-								.forPrice(5.99)
+								.forPrice(new BigDecimal("5.99"))
 								.withStock(10)
 								.withImg(ImgPathBuilder.buildImgPath(Categories.CAMPING, "stakes.jpg"))
 								.build());
@@ -50,7 +51,7 @@ public class StockDaoImpl implements StockDao {
 	}
 
 	@Override
-	public Product getProduct(int productId) {
+	public Product getProduct(long productId) {
 		for(Product product : products) {
 			if(product.getProductId() == productId) {
 				return product;
@@ -82,14 +83,14 @@ public class StockDaoImpl implements StockDao {
 	}
 
 	@Override
-	public void updateProduct(int productId, Product updatedProduct) {
+	public void updateProduct(long productId, Product updatedProduct) {
 		Product product = getProduct(productId);
 		int productIndex = products.indexOf(product);
 		products.set(productIndex, updatedProduct);	
 	}
 
 	@Override
-	public void deleteProduct(int productId) {
+	public void deleteProduct(long productId) {
 		for(Product product : products) {
 			if(product.getProductId() == productId) {
 				products.remove(product);
