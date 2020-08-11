@@ -13,7 +13,7 @@ import com.orgabor.sportsgearstore.utils.ImgPathBuilder;
 class ProductUpdater {
 	private final HttpServletRequest req;
 	private final StockDao stocks;
-	private final int productId;
+	private final long productId;
 	
 	ProductUpdater(HttpServletRequest req, StockDao stocks) {
 		this.req = req;

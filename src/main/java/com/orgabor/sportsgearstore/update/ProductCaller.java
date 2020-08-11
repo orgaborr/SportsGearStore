@@ -8,9 +8,9 @@ import com.orgabor.sportsgearstore.products.Product;
 
 class ProductCaller {
 	private final StockDao stocks;
-	private final int productId;
+	private final long productId;
 	
-	ProductCaller(StockDao stocks, int productId) {
+	ProductCaller(StockDao stocks, long productId) {
 		this.stocks = stocks;
 		this.productId = productId;
 	}
