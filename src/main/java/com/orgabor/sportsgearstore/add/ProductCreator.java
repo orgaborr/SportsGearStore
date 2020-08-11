@@ -26,7 +26,7 @@ class ProductCreator {
 	}
 	
 	private void convertParams() {
-		int productIdInt = Integer.parseInt((String) params.get("productId"));
+		long productIdInt = Long.parseLong((String) params.get("productId"));
 		params.replace("productId", productIdInt);	
 		Categories categoryEnum = Categories.valueOf((String) params.get("category"));
 		params.replace("category", categoryEnum);	
