@@ -12,7 +12,7 @@ import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.dao.StockDaoImpl;
 import com.orgabor.sportsgearstore.utils.AttributeSetter;
 
-@WebServlet(urlPatterns = "/edit-product.do")
+@WebServlet(urlPatterns = "/edit-product")
 public class EditProductServlet extends HttpServlet{
 	
 	private StockDao stocks = new StockDaoImpl();

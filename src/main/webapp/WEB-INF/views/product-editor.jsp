@@ -36,7 +36,7 @@
 
 <div class="container">
 	<h4>Update</h4>
-	<form method="POST" action="/edit-product.do">
+	<form method="POST" action="/edit-product">
 		<fieldset>
 			<input type="hidden" name="productId" value="${product.getProductId()}">
 		

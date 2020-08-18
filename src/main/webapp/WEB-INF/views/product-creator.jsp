@@ -3,7 +3,7 @@
 
 <div class="container">
 	<h4>New Product</h4>
-	<form method="POST" action="/add-product.do">
+	<form method="POST" action="/add-product">
 		<fieldset>
 			<label>Product ID #</label>
 			<input type="text" name="productId"><br>

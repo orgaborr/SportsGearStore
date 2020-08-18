@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.dao.StockDaoImpl;
 
-@WebServlet(urlPatterns = "/delete-product.do")
+@WebServlet(urlPatterns = "/delete-product")
 public class DeleteProductServlet extends HttpServlet{
 	
 	private StockDao stocks = new StockDaoImpl();
@@ -21,6 +21,6 @@ public class DeleteProductServlet extends HttpServlet{
 		String productIdParam = req.getParameter("productId");
 		int productIdInt = Integer.parseInt(productIdParam);
 		stocks.deleteProduct(productIdInt);
-		res.sendRedirect("/retrieve-products.do");
+		res.sendRedirect("/retrieve-products");
 	}
 }

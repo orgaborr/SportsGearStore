@@ -12,7 +12,7 @@ import com.orgabor.sportsgearstore.dao.StockDao;
 import com.orgabor.sportsgearstore.dao.StockDaoImpl;
 import com.orgabor.sportsgearstore.products.Product;
 
-@WebServlet(urlPatterns = "/add-product.do")
+@WebServlet(urlPatterns = "/add-product")
 public class AddProductServlet extends HttpServlet {
 	
 	private StockDao stocks = new StockDaoImpl();
@@ -28,7 +28,7 @@ public class AddProductServlet extends HttpServlet {
 		Product newProduct = creator.buildProduct();
 		if(stocks.getProduct(newProduct.getProductId()) == null) {
 			stocks.addProduct(newProduct);
-			res.sendRedirect("/retrieve-products.do?search=" + newProduct.getProductId());
+			res.sendRedirect("/retrieve-products?search=" + newProduct.getProductId());
 		} else {
 			req.setAttribute("errorMessage", "Product with Product ID #" + newProduct.getProductId() + "already in database");
 			req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);

@@ -2,7 +2,7 @@
 	<div class="navbar-collapse">
 
 		<form class="navbar-form navbar-left" method="GET"
-			action="/retrieve-products.do">
+			action="/retrieve-products">
 			<input name="search" type="text" class="form-control">
 			<button type="submit" class="btn btn-success">Search</button>
 		</form>
@@ -14,14 +14,14 @@
 				
 					<jsp:useBean id="categories" class="com.orgabor.sportsgearstore.beans.CategoriesBean" scope="session"></jsp:useBean>
 					<c:forEach items="${categories.getCategories()}" var="category">
-						<li><a class="dropdown-item" href="/retrieve-by-category.do?category=${category}">${category}</a></li>
+						<li><a class="dropdown-item" href="/retrieve-by-category?category=${category}">${category}</a></li>
 					</c:forEach>
 
 				</ul></li>
 			<li><a href="/add-product.do">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/logout.do">Logout</a></li>
+			<li><a href="/logout">Logout</a></li>
 		</ul>
 	</div>
 </nav>

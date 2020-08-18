@@ -6,9 +6,9 @@
 		<p><strong>Category: </strong>${product.getCategory()}</p>
 		<p><strong>Price: </strong>&euro;${product.getPrice()}</p>
 		<p><strong>In Stock: </strong>${product.getInStock()}</p>
-		<a href="/edit-product.do?productId=${product.getProductId()}"
+		<a href="/edit-product?productId=${product.getProductId()}"
 			class="btn btn-primary">Edit</a>
-		<a href="/delete-product.do?productId=${product.getProductId()}"
+		<a href="/delete-product?productId=${product.getProductId()}"
 			class="btn btn-danger">Delete</a>
 	</div>
 </div>
