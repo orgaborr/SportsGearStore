@@ -33,6 +33,6 @@ public class EditProductServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ProductUpdater updater = new ProductUpdater(req, stocks);
 		updater.updateProduct();
-		res.sendRedirect("/edit-product.do?productId=" + req.getParameter("productId"));
+		res.sendRedirect("/edit-product?productId=" + req.getParameter("productId"));
 	}
 }
