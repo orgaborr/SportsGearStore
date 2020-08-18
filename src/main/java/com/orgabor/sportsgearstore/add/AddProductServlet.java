@@ -30,7 +30,7 @@ public class AddProductServlet extends HttpServlet {
 			stocks.addProduct(newProduct);
 			res.sendRedirect("/retrieve-products?search=" + newProduct.getProductId());
 		} else {
-			req.setAttribute("errorMessage", "Product with Product ID #" + newProduct.getProductId() + "already in database");
+			req.setAttribute("errorMessage", "Product with Product ID #" + newProduct.getProductId() + " already in database");
 			req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);
 		}	
 	}

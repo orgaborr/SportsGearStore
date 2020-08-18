@@ -18,7 +18,7 @@
 					</c:forEach>
 
 				</ul></li>
-			<li><a href="/add-product.do">Add Product</a></li>
+			<li><a href="/add-product">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/logout">Logout</a></li>
