@@ -1,6 +1,8 @@
 package com.orgabor.sportsgearstore.dao;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,28 @@ import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
 import com.orgabor.sportsgearstore.utils.ImgPathBuilder;
 
-public class StockDaoImpl implements StockDao {	
+public class StockDaoImpl implements StockDao {
+		
+	private Connection getConnection() {
+		Connection con = null;
+		try {
+			String driver = "com.mysql.jdbc.Driver";
+			String url = "jdbc:mysql://localhost:3306/databasename";
+			String username = "root";
+			String password = "root";
+			
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, username, password);
+			
+			System.out.println("Connection successful");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+	
+	
 	
 	private static List<Product> products = new ArrayList<>();
 	static {
