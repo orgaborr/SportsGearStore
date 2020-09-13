@@ -1,16 +1,15 @@
 package com.orgabor.sportsgearstore.dao;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.orgabor.sportsgearstore.products.Categories;
 import com.orgabor.sportsgearstore.products.Product;
-import com.orgabor.sportsgearstore.utils.ImgPathBuilder;
+import com.orgabor.sportsgearstore.products.ProductBuilder;
 
 public class StockDaoImpl implements StockDao {
 	private Statement stmt = null;
@@ -85,11 +84,13 @@ public class StockDaoImpl implements StockDao {
 		try {
 			stmt = getConnection().createStatement();
 			results = stmt.executeQuery("SELECT * FROM products WHERE productId = " + productId);
-			
+			Map<String, Object> params = new ProductDbReader().readResult(results);
+			return ProductBuilder.buildProduct(params);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	@Override
