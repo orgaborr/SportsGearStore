@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS sportsgearstore;
+USE sportsgearstore;
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE IF NOT EXISTS products (
+productId BIGINT NOT NULL AUTO_INCREMENT,
+name VARCHAR(30) NOT NULL,
+description VARCHAR(1000),
+category VARCHAR(10) NOT NULL,
+price DECIMAL(6,2) NOT NULL,
+inStock INT NOT NULL,
+img VARCHAR(120),
+PRIMARY KEY(productId)
+);
+
+INSERT INTO products
+(name, description, category, price, inStock, img)
+VALUES
+('Bicycle', 'A cool bike', 'CYCLING', 329.99, 10, 'bicycle.png'),
+('Tent', 'Tent for 3', 'CAMPING', 99.99, 4, 'tent.png'),
+('Rope', '50m dynamic rope', 'CLIMBING', 299.99, 2, 'rope.jpg'),
+('Tent Stakes', 'A set of 10 tent stakes', 'CAMPING', 5.99, 10, 'stakes.jpg');
+
+SELECT * FROM products;
