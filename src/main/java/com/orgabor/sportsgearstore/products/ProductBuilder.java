@@ -3,6 +3,8 @@ package com.orgabor.sportsgearstore.products;
 import java.math.BigDecimal;
 import java.util.Map;
 
+import com.orgabor.sportsgearstore.utils.ImgPathBuilder;
+
 public class ProductBuilder {
 
 	public static Product buildProduct(Map<String, Object> productParams) {
@@ -25,7 +27,7 @@ public class ProductBuilder {
 				.ofCategory(category)
 				.forPrice(price)
 				.withStock(stock)
-				.withImg(img)
+				.withImg(ImgPathBuilder.buildImgPath(category, img))
 				.build();
 	}
 }

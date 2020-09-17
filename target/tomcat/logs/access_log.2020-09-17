@@ -1,4 +1,9 @@
-0:0:0:0:0:0:0:1 - - [17/Sep/2020:14:13:35 +0200] "GET /retrieve-products?search=1 HTTP/1.1" 200 2154 http-bio-8080-exec-1 687
-0:0:0:0:0:0:0:1 - - [17/Sep/2020:14:13:35 +0200] "GET /bicycle.png HTTP/1.1" 404 973 http-bio-8080-exec-2 3
-0:0:0:0:0:0:0:1 - - [17/Sep/2020:14:13:35 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-3 3
-0:0:0:0:0:0:0:1 - - [17/Sep/2020:14:13:35 +0200] "GET /webjars/bootstrap/3.3.6/js/bootstrap.min.js HTTP/1.1" 304 - http-bio-8080-exec-4 3
+127.0.0.1 - - [17/Sep/2020:14:23:20 +0200] "GET /retrieve-products HTTP/1.1" 200 1677 http-bio-8080-exec-1 442
+127.0.0.1 - - [17/Sep/2020:14:23:21 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 2
+127.0.0.1 - - [17/Sep/2020:14:23:23 +0200] "GET /retrieve-products?search=1 HTTP/1.1" 200 2175 http-bio-8080-exec-4 252
+127.0.0.1 - - [17/Sep/2020:14:23:23 +0200] "GET /images/cycling/bicycle.png HTTP/1.1" 200 550980 http-bio-8080-exec-5 9
+127.0.0.1 - - [17/Sep/2020:14:23:25 +0200] "GET /retrieve-products?search=2 HTTP/1.1" 200 2166 http-bio-8080-exec-8 21
+127.0.0.1 - - [17/Sep/2020:14:23:25 +0200] "GET /images/camping/tent.png HTTP/1.1" 200 508577 http-bio-8080-exec-6 4
+127.0.0.1 - - [17/Sep/2020:14:23:29 +0200] "GET /retrieve-products?search=4 HTTP/1.1" 200 2188 http-bio-8080-exec-9 21
+127.0.0.1 - - [17/Sep/2020:14:23:29 +0200] "GET /images/camping/stakes.jpg HTTP/1.1" 200 5886 http-bio-8080-exec-10 2
+127.0.0.1 - - [17/Sep/2020:14:23:32 +0200] "GET /retrieve-products?search=5 HTTP/1.1" 200 1729 http-bio-8080-exec-9 22

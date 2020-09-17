@@ -12,7 +12,7 @@ import com.orgabor.sportsgearstore.products.Product;
 import com.orgabor.sportsgearstore.products.ProductBuilder;
 
 public class StockDaoImpl implements StockDao {
-	private Statement stmt = null;
+	private Statement statement = null;
 	private ResultSet results = null;
 		
 	private Connection getConnection() {
@@ -82,8 +82,8 @@ public class StockDaoImpl implements StockDao {
 //		}
 //		return null;
 		try {
-			stmt = getConnection().createStatement();
-			results = stmt.executeQuery("SELECT * FROM products WHERE productId = " + productId);
+			statement = getConnection().createStatement();
+			results = statement.executeQuery("SELECT * FROM products WHERE productId = " + productId);
 			Map<String, Object> params = new ProductDbReader().readResult(results);
 			return ProductBuilder.buildProduct(params);
 			
