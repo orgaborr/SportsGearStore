@@ -15,9 +15,9 @@ public class AttributeSetter {
 		this.stocks = stocks;
 	}
 
-	public boolean setProduct(String productId, HttpServletRequest req) {
-		long productIdInt = Long.parseLong(productId);
-		Product product = stocks.getProduct(productIdInt);
+	public boolean setProduct(String productIdString, HttpServletRequest req) {
+		long productIdLong = Long.parseLong(productIdString);
+		Product product = stocks.getProduct(productIdLong);
 		if(product != null) {
 			req.setAttribute("product", product);
 			return true;

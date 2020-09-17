@@ -9,7 +9,12 @@ public class ProductBuilder {
 		long productId = (long) productParams.get("productId");
 		String name = (String) productParams.get("name");
 		String description = (String) productParams.get("description");
-		Categories category = (Categories) productParams.get("category");
+		Categories category = null;
+		if(productParams.get("category") instanceof String) {
+			category = (Categories) Categories.valueOf((String) productParams.get("category"));
+		} else {
+			category = (Categories) productParams.get("category");
+		}
 		BigDecimal price = (BigDecimal) productParams.get("price");
 		int stock = (int) productParams.get("inStock");
 		String img = (String) productParams.get("img");

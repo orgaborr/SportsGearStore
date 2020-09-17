@@ -17,7 +17,7 @@ public class StockDaoImpl implements StockDao {
 		
 	private Connection getConnection() {
 		String driver = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/sportsgearstore";
+		String url = "jdbc:mysql://localhost:3306/sportsgearstore?serverTimezone=UTC";
 		String username = "root";
 		String password = "root";	
 		Connection con = null;

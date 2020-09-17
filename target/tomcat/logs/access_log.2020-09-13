@@ -1,4 +1,0 @@
-0:0:0:0:0:0:0:1 - - [13/Sep/2020:17:44:38 +0200] "GET /retrieve-products HTTP/1.1" 200 1677 http-bio-8080-exec-1 448
-0:0:0:0:0:0:0:1 - - [13/Sep/2020:17:44:38 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-2 1
-0:0:0:0:0:0:0:1 - - [13/Sep/2020:17:44:40 +0200] "GET /retrieve-products?search=1 HTTP/1.1" 200 1729 http-bio-8080-exec-4 252
-0:0:0:0:0:0:0:1 - - [13/Sep/2020:17:44:40 +0200] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-5 1
