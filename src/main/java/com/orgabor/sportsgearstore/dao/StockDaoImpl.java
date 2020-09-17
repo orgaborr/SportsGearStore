@@ -71,16 +71,24 @@ public class StockDaoImpl implements StockDao {
 	@Override
 	public void addProduct(Product product) {
 //		products.add(product);
+		
+		try {
+			statement = getConnection().createStatement();
+			results = statement.executeQuery("INSERT INTO products" +
+											 "(name, description, category, price, inStock, img)" +
+											 "VALUES (" +
+											 product.getName() + "," + product.getDescription() + ", " +
+											 product.getCategory().name() + ", " + product.getPrice() + ", " +
+											 product.getInStock() + ", " + product.getImg() + ")"
+											 );
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public Product getProduct(long productId) {
-//		for(Product product : products) {
-//			if(product.getProductId() == productId) {
-//				return product;
-//			}
-//		}
-//		return null;
 		try {
 			statement = getConnection().createStatement();
 			results = statement.executeQuery("SELECT * FROM products WHERE productId = " + productId);
