@@ -27,8 +27,12 @@ public class AddProductServlet extends HttpServlet {
 		ProductCreator creator = new ProductCreator(req);
 		Product newProduct = creator.buildProduct();
 		if(stocks.getProduct(newProduct.getProductId()) == null) {
-			stocks.addProduct(newProduct);
-			res.sendRedirect("/retrieve-products?search=" + newProduct.getProductId());
+			if(stocks.addProduct(newProduct)) {
+				res.sendRedirect("/retrieve-products?search=" + newProduct.getProductId());
+			} else {
+				req.setAttribute("errorMessage", "Product with name " + newProduct.getName() + " alrady exists in database");
+				req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);
+			}
 		} else {
 			req.setAttribute("errorMessage", "Product with Product ID #" + newProduct.getProductId() + " already in database");
 			req.getRequestDispatcher("/WEB-INF/views/product-creator.jsp").forward(req, res);

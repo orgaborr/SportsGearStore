@@ -69,7 +69,7 @@ public class StockDaoImpl implements StockDao {
 //	}
 	
 	@Override
-	public void addProduct(Product product) {
+	public boolean addProduct(Product product) {
 //		products.add(product);
 		System.out.println(product.getProductId() + ", " + 
 											 product.getName() + ", " + 
@@ -80,7 +80,7 @@ public class StockDaoImpl implements StockDao {
 											 product.getImg() + ")");
 		try {
 			statement = getConnection().createStatement();
-			statement.execute("INSERT INTO products" +
+			return statement.execute("INSERT INTO products" +
 											 "(product_id, name, description, category, price, in_stock, img)" +
 											 "VALUES (" +
 											 product.getProductId() + ", '" + 
@@ -94,6 +94,7 @@ public class StockDaoImpl implements StockDao {
 			
 		} catch(Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 
