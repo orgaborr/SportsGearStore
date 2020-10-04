@@ -75,11 +75,15 @@ public class StockDaoImpl implements StockDao {
 		try {
 			statement = getConnection().createStatement();
 			results = statement.executeQuery("INSERT INTO products" +
-											 "(name, description, category, price, inStock, img)" +
+											 "(name, description, category, price, in_stock, img)" +
 											 "VALUES (" +
-											 product.getName() + "," + product.getDescription() + ", " +
-											 product.getCategory().name() + ", " + product.getPrice() + ", " +
-											 product.getInStock() + ", " + product.getImg() + ")"
+											 product.getProductId() + ", " + 
+											 product.getName() + ", " + 
+											 product.getDescription() + ", " +
+											 product.getCategory().name() + ", " +
+											 product.getPrice() + ", " +
+											 product.getInStock() + ", " +
+											 product.getImg() + ")"
 											 );
 			
 		} catch(Exception e) {
@@ -91,7 +95,7 @@ public class StockDaoImpl implements StockDao {
 	public Product getProduct(long productId) {
 		try {
 			statement = getConnection().createStatement();
-			results = statement.executeQuery("SELECT * FROM products WHERE productId = " + productId);
+			results = statement.executeQuery("SELECT * FROM products WHERE product_id = " + productId);
 			Map<String, Object> params = new ProductDbReader().readResult(results);
 			return ProductBuilder.buildProduct(params);
 			

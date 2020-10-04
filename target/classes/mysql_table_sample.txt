@@ -3,22 +3,23 @@ USE sportsgearstore;
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE IF NOT EXISTS products (
-productId BIGINT NOT NULL AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
+id INT NOT NULL AUTO_INCREMENT,
+product_id BIGINT NOT NULL UNIQUE,
+name VARCHAR(30) NOT NULL UNIQUE,
 description VARCHAR(1000),
 category VARCHAR(10) NOT NULL,
 price DECIMAL(6,2) NOT NULL,
-inStock INT NOT NULL,
+in_stock INT NOT NULL,
 img VARCHAR(120),
 PRIMARY KEY(productId)
 );
 
 INSERT INTO products
-(name, description, category, price, inStock, img)
+(product_id, name, description, category, price, inStock, img)
 VALUES
-('Bicycle', 'A cool bike', 'CYCLING', 329.99, 10, 'bicycle.png'),
-('Tent', 'Tent for 3', 'CAMPING', 99.99, 4, 'tent.png'),
-('Rope', '50m dynamic rope', 'CLIMBING', 299.99, 2, 'rope.jpg'),
-('Tent Stakes', 'A set of 10 tent stakes', 'CAMPING', 5.99, 10, 'stakes.jpg');
+(1001, 'Bicycle', 'A cool bike', 'CYCLING', 329.99, 10, 'bicycle.png'),
+(2001, 'Tent', 'Tent for 3', 'CAMPING', 99.99, 4, 'tent.png'),
+(3001, 'Rope', '50m dynamic rope', 'CLIMBING', 299.99, 2, 'rope.jpg'),
+(2002, 'Tent Stakes', 'A set of 10 tent stakes', 'CAMPING', 5.99, 10, 'stakes.jpg');
 
 SELECT * FROM products;
