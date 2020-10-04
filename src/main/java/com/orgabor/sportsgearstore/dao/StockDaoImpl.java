@@ -75,7 +75,7 @@ public class StockDaoImpl implements StockDao {
 		try {
 			statement = getConnection().createStatement();
 			results = statement.executeQuery("INSERT INTO products" +
-											 "(name, description, category, price, in_stock, img)" +
+											 "(product_id, name, description, category, price, in_stock, img)" +
 											 "VALUES (" +
 											 product.getProductId() + ", " + 
 											 product.getName() + ", " + 

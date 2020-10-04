@@ -3,7 +3,7 @@ USE sportsgearstore;
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE IF NOT EXISTS products (
-id INT NOT NULL AUTO_INCREMENT,
+creation_id INT NOT NULL AUTO_INCREMENT,
 product_id BIGINT NOT NULL UNIQUE,
 name VARCHAR(30) NOT NULL UNIQUE,
 description VARCHAR(1000),
@@ -11,11 +11,11 @@ category VARCHAR(10) NOT NULL,
 price DECIMAL(6,2) NOT NULL,
 in_stock INT NOT NULL,
 img VARCHAR(120),
-PRIMARY KEY(productId)
+PRIMARY KEY(creation_id)
 );
 
 INSERT INTO products
-(product_id, name, description, category, price, inStock, img)
+(product_id, name, description, category, price, in_stock, img)
 VALUES
 (1001, 'Bicycle', 'A cool bike', 'CYCLING', 329.99, 10, 'bicycle.png'),
 (2001, 'Tent', 'Tent for 3', 'CAMPING', 99.99, 4, 'tent.png'),

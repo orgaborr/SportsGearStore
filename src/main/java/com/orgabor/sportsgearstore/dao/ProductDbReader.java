@@ -9,12 +9,12 @@ class ProductDbReader {
 	Map<String, Object> readResult(ResultSet results) throws Exception {
 		Map<String, Object> params = new HashMap<>();
 		while(results.next()) {
-			params.put("productId", results.getLong("productId"));
+			params.put("productId", results.getLong("product_id"));
 			params.put("name", results.getString("name"));
 			params.put("description", results.getString("description"));
 			params.put("category", results.getString("category"));
 			params.put("price", results.getBigDecimal("price"));
-			params.put("inStock", results.getInt("inStock"));
+			params.put("inStock", results.getInt("in_stock"));
 			params.put("img", results.getString("img"));
 		}
 		return params;

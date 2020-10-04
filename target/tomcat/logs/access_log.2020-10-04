@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:03 +0200] "GET /retrieve-products HTTP/1.1" 200 1677 http-bio-8080-exec-1 450
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:06 +0200] "GET /retrieve-products?search=1001 HTTP/1.1" 200 2184 http-bio-8080-exec-3 258
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:06 +0200] "GET /images/cycling/bicycle.png HTTP/1.1" 200 550980 http-bio-8080-exec-4 7
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:10 +0200] "GET /retrieve-products?search=1002 HTTP/1.1" 200 1729 http-bio-8080-exec-7 26
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:23 +0200] "GET /retrieve-products?search=2001 HTTP/1.1" 200 2175 http-bio-8080-exec-8 22
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:24 +0200] "GET /images/camping/tent.png HTTP/1.1" 200 508577 http-bio-8080-exec-9 5
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:25 +0200] "GET /retrieve-products?search= HTTP/1.1" 200 1677 http-bio-8080-exec-9 1
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:31 +0200] "GET /retrieve-products?search=3001 HTTP/1.1" 200 2184 http-bio-8080-exec-9 16
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:31 +0200] "GET /images/climbing/rope.jpg HTTP/1.1" 200 10155 http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:38 +0200] "GET /retrieve-products?search=2002 HTTP/1.1" 200 2197 http-bio-8080-exec-9 17
+0:0:0:0:0:0:0:1 - - [04/Oct/2020:15:20:38 +0200] "GET /images/camping/stakes.jpg HTTP/1.1" 200 5886 http-bio-8080-exec-9 3

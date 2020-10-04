@@ -1,2 +1,0 @@
-127.0.0.1 - - [17/Sep/2020:14:37:55 +0200] "GET /retrieve-products HTTP/1.1" 200 1677 http-bio-8080-exec-1 447
-127.0.0.1 - - [17/Sep/2020:14:37:58 +0200] "GET /add-product HTTP/1.1" 200 2692 http-bio-8080-exec-2 62

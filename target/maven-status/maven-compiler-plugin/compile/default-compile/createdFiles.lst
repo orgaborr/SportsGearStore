@@ -1,12 +1,6 @@
 com\orgabor\sportsgearstore\utils\AttributeSetter.class
-com\orgabor\sportsgearstore\dao\StockDaoImpl.class
-com\orgabor\sportsgearstore\delete\DeleteProductServlet.class
-com\orgabor\sportsgearstore\update\EditProductServlet.class
 com\orgabor\sportsgearstore\update\UpdateParamExtractor.class
-com\orgabor\sportsgearstore\dao\ProductDbReader.class
 com\orgabor\sportsgearstore\products\Categories.class
-com\orgabor\sportsgearstore\retrieve\RetrieveProductServlet.class
-com\orgabor\sportsgearstore\add\AddProductServlet.class
 com\orgabor\sportsgearstore\update\ProductCaller.class
 com\orgabor\sportsgearstore\utils\ImgPathBuilder.class
 com\orgabor\sportsgearstore\add\ProductCreator.class
@@ -16,4 +10,3 @@ com\orgabor\sportsgearstore\products\ProductBuilder.class
 com\orgabor\sportsgearstore\dao\StockDao.class
 com\orgabor\sportsgearstore\update\ProductUpdater.class
 com\orgabor\sportsgearstore\products\Product$Builder.class
-com\orgabor\sportsgearstore\retrieve\RetrieveByCategoryServlet.class
